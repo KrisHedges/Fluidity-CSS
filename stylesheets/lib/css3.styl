@@ -29,13 +29,23 @@ border-bottom-right-radius(n)
   border-bottom-right-radius n
 
 // Box Shadow
+
+//An implicit box shadow helper for more than one shadow if necessary
+box-shadow()
+  -moz-box-shadow arguments
+  -webkit-box-shadow arguments
+  -o-box-shadow arguments
+  box-shadow arguments
+
+// A single outset shadwo
 shadow(x,y,b,c)
   -moz-box-shadow x y b c
   -webkit-box-shadow x y b c
   -o-box-shadow x y b c
   box-shadow x y b c
 
-// Inset Shadow 
+// Inset Shadow
+// A single inset shadow 
 inshadow(x,y,b,s,c)
   -webkit-box-shadow inset x y b s c
   -moz-box-shadow inset x y b s c

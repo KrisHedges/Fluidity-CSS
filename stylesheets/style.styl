@@ -2,6 +2,7 @@
 @import "lib/grid"
 @import "lib/type"
 @import "lib/css3"
+@import "lib/forms"
 
 // elements.styl requires and imports colors.styl. Which is where the below variables are from.
 @import "lib/elements" 
@@ -61,12 +62,30 @@ header
 .element
   grid_33()
 
+.examplebuttonholder
+  display block
+  width 250px
+  margin 0 auto 1.5em auto  
+
+.fullexampleform
+  grid_60()
+  form            // Control the width of the form and center it if you like. Otherwise it will fill the column to 100%.
+    width 450px
+    margin 0 auto  
+
+.formexplanation
+  grid_40()
+
+
+.horizontal-form-explanation
+  grid_100()
+
+.horizontal-form
+  grid_33()
+
 //CSS3
 .placeholder
   grid_100()
-
-.small
-  small()
 
 .tabbed-box
   padding 10px
@@ -82,9 +101,5 @@ header
   color lightgray2
   text-align center
   border-top 1px solid color
-
-
-.grid_10
-  small()
 
 

@@ -99,9 +99,110 @@
       </div>
       <div class="element">
         <h3>Buttons:</h3>
-        <button><a href="#">A Button</a></button>
-        <button disabled="disabled"><a href="#">A Disabled Button</a></button>
+        <div class="examplebuttonholder">
+          <button><a href="#">A Button</a></button>
+          <button disabled="disabled"><a href="#">A Disabled Button</a></button>
+        </div>
       </div>
+    </section>
+    <section>
+      <h1>Forms</h1>
+      <div class="fullexampleform">
+        <h3>Traditional Vertical Form:</h3>
+        <form>
+          <fieldset>
+            <legend>Form Legend</legend>
+            <label>Full Name:</label>
+            <input type="text" name="" value="" />
+            <label>Message:</label>
+            <textarea name="" value=""></textarea>
+            <legend>Choose One:</legend>
+            <label for="yes">Yes</label>              
+            <input type="radio" name="sex" id="yes" value="yes"/>
+            <label for="no">No</label>
+            <input type="radio" name="sex" id="no" value="no"/>
+            <legend>Choose Many:</legend>
+            <label for="apples">Apples</label>              
+            <input type="checkbox" name="things" id="apples" value="apples"/>
+            <label for="oranges">Oranges</label>              
+            <input type="checkbox" name="things" id="oranges" value="oranges"/>
+            <label for="pears">Pears</label>              
+            <input type="checkbox" name="things" id="pears" value="pears"/>
+            <legend>Select One:</legend>
+            <label>Make Your Selection:</label>
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+            <legend>Select a File:</legend>
+            <input type="file" name="file" value="Choose File" />
+            <input type="submit" name="submit" value="Submit" />
+            <input type="reset" name="reset" value="Reset" />
+          </fieldset>
+        </form>
+      </div>
+      <div class="formexplanation">
+        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.</p>
+      </div>
+    </section>
+    <section>
+      <div class="horizontal-form-explanation">
+        <h3>Use the Grid to easily Create a Horizontal Form:</h3>
+      </div>
+    </section>
+    <section>
+      <form>
+      <div class="horizontal-form">
+        <fieldset>
+          <legend>Form Legend</legend>
+          <label>Full Name:</label>
+          <input type="text" name="" value="" />
+          <label>Message:</label>
+          <textarea name="" value=""></textarea>
+        </fieldset>
+      </div>
+      <div class="horizontal-form">
+        <fieldset>
+          <legend>Select One:</legend>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+          <div class="grid_50">
+            <legend>Choose One:</legend>
+            <label for="yes">Yes</label>              
+            <input type="radio" name="sex" id="yes" value="yes"/>
+            <label for="no">No</label>
+            <input type="radio" name="sex" id="no" value="no"/>
+          </div>
+          <div class="grid_50">
+            <legend>Choose Many:</legend>
+            <label for="apples">Apples</label>              
+            <input type="checkbox" name="things" id="apples" value="apples"/>
+            <label for="oranges">Oranges</label>              
+            <input type="checkbox" name="things" id="oranges" value="oranges"/>
+            <label for="pears">Pears</label>              
+            <input type="checkbox" name="things" id="pears" value="pears"/>        
+          </div>
+        </fieldset>
+      </div>
+      <div class="horizontal-form">
+        <fieldset>
+          <legend>Select a File:</legend>
+          <input type="file" name="file" value="Choose File" />
+          <div class="examplebuttonholder">
+            <input type="submit" name="submit" value="Submit" />
+            <input type="reset" name="reset" value="Reset" />
+          </div>
+        </fieldset>
+      </div>
+      </form>
     </section>
     <section>
       <div class="footer">
