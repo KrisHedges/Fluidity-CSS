@@ -1,6 +1,6 @@
 static = require('node-static')
 file = new(static.Server)('./public');
-port = 34449
+port = process.env.PORT || 3000
 
 console.log "Server Started on port: " + port
 

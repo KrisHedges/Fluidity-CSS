@@ -1,11 +1,12 @@
 (function() {
-  var file, static;
+  var file, port, static;
   static = require('node-static');
   file = new static.Server('./public');
-  console.log("Server running at http://localhost:8080/");
+  port = process.env.PORT || 3000;
+  console.log("Server Started on port: " + port);
   require('http').createServer(function(request, response) {
     return request.addListener('end', function() {
       return file.serve(request, response);
     });
-  }).listen(34449);
+  }).listen(port);
 }).call(this);
