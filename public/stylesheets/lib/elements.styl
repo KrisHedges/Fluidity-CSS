@@ -9,14 +9,13 @@
   left 0
   border 1px solid color
   gradient(darkgray3,darkgray2,darkgray1)
-  color lightgray3
-  text-shadow 0px -2px 1px color
+  color color
   z-index 10
   opacity(1.0)
   shadow 0 0 16px color
-  overflow hidden
   .topbar-inner
     grid()
+    overflow visible
     p
       margin 1.5em
   button, .button
@@ -30,7 +29,6 @@
     &:active
     &.current
       border 0
-
 
 .pills
   display block
