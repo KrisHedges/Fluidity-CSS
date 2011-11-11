@@ -112,3 +112,18 @@ header
   border-top 1px solid color
 
 
+.transition-me
+  display block
+  width 20px
+  height 20px
+  margin 3em
+  background-color darkgray1
+  transform(rotate(0deg))
+  transition-property transform background-color width height
+  transition-duration 1s
+  transition-timing-function ease-out
+  &:hover
+    width 40px
+    height 40px
+    background-color red
+    transform(rotate(45deg))
