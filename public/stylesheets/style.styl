@@ -127,3 +127,22 @@ header
     height 40px
     background-color red
     transform(rotate(45deg))
+
+@keyframes spin
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)
+
+.animate-me
+  display block
+  width 20px
+  height 20px
+  margin 3em
+  background-color darkgray1 
+  animation-name spin 
+  animation-duration 1s 
+  animation-timing-function linear
+  animation-delay 0s 
+  animation-iteration-count infinite 
+  animation-direction normal
