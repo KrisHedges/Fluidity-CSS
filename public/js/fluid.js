@@ -23,7 +23,7 @@ $(document).ready( function(){
   };
 
   var stopIt = function(){
-    setTimeout("clearInterval(fireInterval)", 2999);
+    setTimeout("clearInterval(fireInterval)", 3099);
   };
   stopIt();
 
