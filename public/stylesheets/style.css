@@ -1239,11 +1239,7 @@ overflow-hidden
   height: 100%;
   margin: 0;
   padding: 0;
-  width: 20%;
-}
-.type1 h1 {
-  border: none;
-  padding-bottom: 0px;
+  width: 30%;
 }
 .type2 {
   position: relative;
@@ -1252,7 +1248,11 @@ overflow-hidden
   height: 100%;
   margin: 0;
   padding: 0;
-  width: 30%;
+  width: 20%;
+}
+.type2 h1 {
+  border: none;
+  padding-bottom: 0px;
 }
 .type3 {
   position: relative;
