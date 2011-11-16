@@ -1,10 +1,27 @@
+// Mixins for Small, Medium, Large, and XLarge Font-sizes
+
+xsmall()
+  font-size 0.65em
+
+small()
+  font-size 0.8em
+
+medium()
+  font-size 1em
+
+large()
+  font-size 1.2em      
+
+xlarge()
+  font-size 1.4em
+
 body
   font-size 100%
   line-height 1.8em
   font-family "Helvetica Neue", Helvetica, Verdana, Arial
 
 p
-  margin 1.8em
+  margin 1.6em
   line-height 1.2em
 
 h1, h2, h3, h4, h5, h6
@@ -54,16 +71,38 @@ code
   font-family "Courier New", Courier, monospace, sans-serif
   overflow auto
 
-// Mixins for Small, Medium, Large, and XLarge Font-sizes
+ol, ul 
+  margin 0 0 1.5em 2.5em
+ul > ul
+  margin 0 0 0 2.5em
+ul
+  list-style disc
+li
+  line-height 1.4em
+dl
+  margin 0 1.8em
+dd, dt
+  line-height 1.4em
+dt
+  font-weight bold
+dd 
+  margin 0 1em
 
-small()
-  font-size 0.8em
-
-medium()
-  font-size 1em
-
-large()
-  font-size 1.2em      
-
-xlarge()
-  font-size 1.4em
+blockquote
+  font-size 0.9 em
+  margin 2em
+  p
+    line-height 1.1em
+    margin 0.5em 1em  
+    font-style italic
+    &:before
+      content open-quote
+    &:after
+      content close-quote
+  small
+    margin 0 1em
+    small()
+    &:before
+      content '\2014 \00A0'
+    
+    

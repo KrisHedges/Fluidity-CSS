@@ -13,6 +13,147 @@ h1
   padding-bottom .625em
   margin-bottom 0
 
+.topbar h1
+  display block
+  position relative
+  top 0  
+  border none
+  color color
+  font-size 1.95em
+  cursor pointer
+  text-shadow 0 1px 1px lightgray3
+
+//Topbar Animation
+@keyframes topbar-square-x
+  0%
+    transform translateX(0%)
+    opacity 0
+  20%
+    transform translateX(50px)
+    opacity 0.75
+  100%
+    transform translateX(400px)
+    opacity 0
+
+@keyframes topbar-square-y
+  0%
+    transform translateY(0px) 
+  10%
+    transform translateY(-18px)
+  20%
+    transform translateY(18px)
+  30%
+    transform translateY(-14px) 
+  40%
+    transform translateY(14px)
+  50%
+    transform translateY(-10px) 
+  60%
+    transform translateY(10px)
+  70%
+    transform translateY(-5px) 
+  80%
+    transform translateY(5px)
+  90%
+    transform translateY(-1px) 
+  100%
+    transform translateY(1px)
+
+@keyframes topbar-square2-y
+  0%
+    transform translateY(0px) 
+  10%
+    transform translateY(18px)
+  20%
+    transform translateY(-18px)
+  30%
+    transform translateY(14px) 
+  40%
+    transform translateY(-14px)
+  50%
+    transform translateY(10px) 
+  60%
+    transform translateY(-10px)
+  70%
+    transform translateY(5px) 
+  80%
+    transform translateY(-5px)
+  90%
+    transform translateY(1px) 
+  100%
+    transform translateY(-1px)
+
+.topbar
+  .stage
+    position absolute
+    display block  
+    top 0
+    left 0
+    display block
+    width 100%
+    height 100%
+    opacity 0
+    transition all .2s linear
+    overflow hidden  
+  .shown
+    opacity 1 !important
+  .square-x
+    position absolute
+    left 18%
+    top 26px
+    display block
+    width 40px
+    height 200px
+    z-index 2
+    animation-name topbar-square-x
+    animation-duration 3s
+    animation-timing-function linear
+    animation-delay 0s
+    animation-iteration-count infinite
+  .square-y
+    display block
+    width 40px
+    height 40px
+    z-index 2
+    animation-name topbar-square-y
+    animation-duration 3s
+    animation-timing-function ease-in-out
+    animation-delay 0s
+    animation-iteration-count infinite
+  .square
+    display block
+    width 5px
+    height 5px
+    background-color darken(lightgray1,20%)
+  .square2-x
+    position absolute
+    left 18%
+    top 26px
+    display block
+    width 40px
+    height 200px
+    z-index 2
+    animation-name topbar-square-x
+    animation-duration 3s
+    animation-timing-function linear
+    animation-delay 0s
+    animation-iteration-count infinite
+  .square2-y
+    display block
+    width 40px
+    height 40px
+    z-index 2
+    animation-name topbar-square2-y
+    animation-duration 3s
+    animation-timing-function ease-in-out
+    animation-delay 0s
+    animation-iteration-count infinite
+  .square2
+    display block
+    width 5px
+    height 5px
+    background-color white
+
 .container
   grid()
   shadow(0, 0, 12px, lighten(darkgray3,50%))
@@ -22,21 +163,157 @@ h1
 header
   grid_100()
   color color
-  rgradient(25%, 50%, white,lightgray1)
-  inshadow(0,0,16px,8px, darken(lightgray1,20%))
+  rgradient(18%,50%, lighten(lightgray3,90%),lightgray2)
   large()
+  border-bottom 1px solid lighten(darkgray3,45%)
 
 .header-inner 
   width 95.825%
   margin 20px
   padding 0px
   border 1px solid color
+  z-index 4
   h4
-    margin .8em 4em .2em 4em
+     margin .8em 1em .2em 4em
   h5
-    margin .2em 4em 1.2em 4.8em
+     margin .2em 1em 1.2em 4.8em
   h1  
+    font-size 2em
     margin .85em 0 .15em 1em
+    text-shadow 0 0 88px white, 0 0 108px white, 0 0 128px white
+
+//Header Animation
+@keyframes square-x
+  0%
+    transform translateX(0%)
+    opacity 0
+  20%
+    transform translateX(150px)
+    opacity 0.75
+  100%
+    transform translateX(700px)
+    opacity 0
+
+@keyframes square-y
+  0%
+    transform translateY(0px)
+  10%
+    transform translateY(-35px)
+  20%
+    transform translateY(35px)
+  30%
+    transform translateY(-23px)
+  40%
+    transform translateY(23px)
+  50%
+    transform translateY(-15px)
+  60%
+    transform translateY(15px)
+  70%
+    transform translateY(-8px)
+  80%
+    transform translateY(8px)
+  90%
+    transform translateY(-2px)
+  100%
+    transform translateY(2px)
+
+@keyframes square2-y
+  0%
+    transform translateY(0px)
+  10%
+    transform translateY(35px)
+  20%
+    transform translateY(-35px)
+  30%
+    transform translateY(23px)
+  40%
+    transform translateY(-23px)
+  50%
+    transform translateY(15px)
+  60%
+    transform translateY(-15px)
+  70%
+    transform translateY(8px)
+  80%
+    transform translateY(-8px)
+  90%
+    transform translateY(2px)
+  100%
+    transform translateY(-2px)
+
+.stage
+  position absolute
+  display block
+  width 100%
+  height 100%
+  overflow-hidden  
+  z-index 2 
+ 
+.square-x
+  position absolute
+  left 15%
+  top 28%
+  display block
+  width 40px
+  height 200px
+  z-index 2
+  opacity 0
+  animation-name square-x
+  animation-duration 3s
+  animation-timing-function linear
+  animation-delay 0s
+  animation-iteration-count infinite
+
+.square-y
+  display block
+  width 40px
+  height 40px
+  z-index 2
+  animation-name square-y
+  animation-duration 3s
+  animation-timing-function ease-in-out
+  animation-delay 0s
+  animation-iteration-count infinite
+
+.square
+  display block
+  width 10px
+  height 10px
+  background-color lightgray2
+
+.square2-x
+  position absolute
+  left 15%
+  top 28%
+  display block
+  width 40px
+  height 200px
+  z-index 2
+  opacity 0
+  animation-name square-x
+  animation-duration 3s
+  animation-timing-function linear
+  animation-delay 0s
+  animation-iteration-count infinite
+
+.square2-y
+  display block
+  width 40px
+  height 40px
+  z-index 2
+  animation-name square2-y
+  animation-duration 3s
+  animation-timing-function ease-in-out
+  animation-delay 0s
+  animation-iteration-count infinite
+
+.square2
+  display block
+  width 10px
+  height 10px
+  background-color white
+
 
 .type1
   grid_20()
@@ -57,6 +334,9 @@ header
   grid_100()
 
 .gradients
+  grid_100()
+
+.transforms_transititions_animation
   grid_100()
 
 .element
@@ -99,16 +379,21 @@ header
   padding 10px
   border-top-right-radius 9px  
   border 1px solid color
-  margin 0 0 0 .5em
+  margin 0 0 0 .75em
 
 .footer
   grid_100()
+  small()
   margin-top 1.5em  
-  rgradient(80%, 0%, darken(lightgray1,40%),darkgray1)
-  color lightgray2
+  rgradient(80%, 0%, lighten(lightgray3,80%),lightgray1)
+  color darkgray2
   text-align center
-  border-top 1px solid color
-
+  border-top 1px solid lightgray1
+  a
+  a:visited
+  a:hover
+  a:active
+    color color
 
 .transition-me
   display block
@@ -126,21 +411,62 @@ header
     background-color red
     transform(rotate(45deg))
 
+@keyframes hypnotizey
+  0%
+    transform translateY(0px)
+  50%
+    transform translateY(40px)
+  100%
+    transform translateY(0px)
+    
+@keyframes hypnotizex
+  0%
+    transform translateX(0px)
+  50%
+    transform translateX(240px)
+  100%
+    transform translateX(0px)
+
 @keyframes spin
   0%
     transform rotate(0deg)
+  50%
+    transform rotate(1080deg)
   100%
-    transform rotate(360deg)
+    transform rotate(0deg)      
 
-.animate-me
+#stage 
+  display block
+  width 320px
+  margin 3em
+
+.hypnotize-y
+  animation-name hypnotizey
+  animation-duration 1.5s
+  animation-timing-function ease-in-out
+  animation-delay 0 
+  animation-iteration-count infinite
+  animation-fill-mode forwards
+
+.hypnotize-x
+  animation-name hypnotizex
+  animation-duration 3s
+  animation-timing-function ease-in-out
+  animation-delay 0 
+  animation-iteration-count infinite
+  animation-fill-mode forwards
+
+.spinner
   display block
   width 20px
   height 20px
-  margin 3em
   background-color darkgray1 
-  animation-name spin 
-  animation-duration 1s 
+  animation-name spin
+  animation-duration 3s
   animation-timing-function linear
-  animation-delay 0s 
-  animation-iteration-count infinite 
+  animation-delay 0 
+  animation-iteration-count infinite
   animation-direction normal
+
+
+

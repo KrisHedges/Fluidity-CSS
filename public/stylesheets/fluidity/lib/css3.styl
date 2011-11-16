@@ -83,7 +83,6 @@ rgradient(x,y,r,e)
   background-image -moz-radial-gradient(x y, circle farthest-side, r, e 100%)
   background-image -webkit-gradient(radial, x y, 0px, x y, minWidth, from(r), to(e))
   background-image -webkit-radial-gradient(x y, circle, r, e)
-  background-image -o-radial-gradient(x y, circle farthest-side, r, e 100%)
   background-image radial-gradient(x y, circle farthest-side, r, e 100%)
 
 // Opacity
@@ -105,7 +104,7 @@ transform()
 // Transitions
 
 transition()
-  if arguments[0] = transform
+  if arguments[0] == 'transform'
     -webkit-transition -webkit-transform arguments[1..3]
     -moz-transition -moz-transform arguments[1..3]
     -o-transition -o-transform arguments[1..3]
@@ -122,7 +121,7 @@ transition()
 // you don't, just use 'all' instead.
 
 transition-property()
-   if arguments[0] = transform
+   if arguments[0] == 'transform'
      more_args = unquote(join(', ', arguments[1..9]))
      -webkit-transition-property -webkit-transform, more_args
      -moz-transition-property -moz-transform, more_args
@@ -154,7 +153,7 @@ transition-delay()
 
 // Animation
 // Sets Vendor Prefixes for defining @keyframes animations
-// Opera Does not support keyframe animations
+// Opera Does not support @keyframe animations
 
 vendors = webkit moz official
 
@@ -166,7 +165,6 @@ animation()
 animation-name()
   -webkit-animation-name arguments
   -moz-animation-name arguments
-  -o-animation-name arguments
   animation-name arguments
 
 animation-duration()

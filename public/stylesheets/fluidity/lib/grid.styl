@@ -1,12 +1,12 @@
-// Set the width of the grid in %
+// Set the width of the grid in % or px
 // Set the minwidth of the grid in px
 
-gridWidth = 80%  
+gridWidth = 90%  
 minWidth = 960px 
 
 // Apply the grid() Mixin to any container element in your CSS.
 // Or
-// Create a parent div using the .grid convenience class.
+// Create a parent div using the .grid class.
 
 grid()
   position relative
@@ -21,21 +21,25 @@ grid()
 body 
   min-width minWidth
   width 100%
+  height 100%  
 
+header
 feildset
 section
 .section 
   position relative
-  display inline-block  
+  display block  
   float left
   width 100%
+  height 100%
   margin 0 
   padding 0
     
 column()
   position relative 
   float left
-  display inline-block
+  display block
+  height 100%
   margin 0
   padding 0
 

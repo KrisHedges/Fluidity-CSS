@@ -2,6 +2,14 @@
 <html>
 <head>
   <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" 
+          src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("jquery", "1.7.0");
+    google.setOnLoadCallback(function() {
+    });
+  </script>
+  <script type="text/javascript" src="js/fluid.js"></script>
   <title>Fluid Grid</title>
 </head>
 <body>
@@ -9,42 +17,161 @@
     <div class="topbar-inner">
       <section>
         <div class="grid_50">
-          <button>Button</button>
-          <p>Here's some text.</p>
+          <div class="stage">
+          </div>
+          <h1>Fluidity</h1>
         </div>
         <div class="grid_50">
           <ul class="pills">
-            <li><a href="#" class="current">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#css3">CSS 3 Mixins</a></li>
+            <li><a href="#ui">UI Elements</a></li>
+            <li><a href="#forms">Forms</a></li>
           </ul>
         </div>
       </section>
     </div>
   </div>
   <div class="container"> 
-    <section>
-      <header>
-        <div class="header-inner">
-          <h1>Fluidity</h1>
-          <h4>A Semantic Fluid Grid System & CSS ToolKit</h4> 
-          <h5>With Base Typography, CSS3 Mixins, UI Elements & Forms.</h5>
-        </div>
-      </header>
-    </section>
-    <section>
-      <h1>Grid System</h1>
-      <div class="placeholder">
-        <div class="transition-me">
-          
-        </div>
-        <div class="animate-me">
-          
-        </div>
+    <header>
+      <div class="stage">
       </div>
+      <div class="header-inner">
+        <h1>Fluidity</h1>
+        <h4>A Semantic Grid System & CSS ToolKit</h4> 
+        <h5>With Base Typography, CSS3 Mixins, UI Elements & Forms.</h5>
+      </div>
+    </header>
+    <section id="grid">
+      <h1>Grid System</h1>
+      <section>
+        <h3>Grid Config Variables:</h3>
+        <p>
+          Located and configured at the top of lib/grid.styl, the gridWidth and minWidth variables are used determine the fluidity of the grid.
+        </p>
+        <div class="grid_40">
+          <h6>Stylus</h6>
+          <code>
+// Set the width of the grid in % or px
+// Set the minwidth of the grid in px
+
+gridWidth = 100%  
+minWidth = 320px 
+          </code>
+        </div>
+        <div class="grid_60">
+          <p>
+            For example a gridWidth of 100% and a minWidth of 320px would allow the layout to expand to the full width of any viewport and shrink down to the mobile friendly width of 320px, no smaller.
+          </p>
+          <p>
+            A <strong>Fixed Width</strong> layout can be achieved by setting both gridWidth and minWidth to the same width in <em>px</em>. Though... <strong>why would you want that?</strong>
+          </p>
+        </div>
+      </section>
+      <section>
+        <h3>The Grid()</h3>
+        <p>
+          To use the grid in your layout, you'll need to create a container element (a div) for your layout and then simply apply the grid to your container either by using the grid() mixin on your semantically named container within your stylus or by using the .grid class on your container.
+        </p>
+        <div class="grid_33">
+          <h6>Stylus</h6>
+         <code>
+#about_page
+  grid()
+          </code>
+        </div>
+        <div class="grid_33">
+          <h6>HTML</h6>
+         <code>
+&lt;div class="grid"&gt;
+  Content...
+&lt;/div&gt;
+          </code>
+        </div>
+        <div class="grid_33">
+          <p>
+            Either of these methods can work to apply the grid. But of course, semantic is better.
+          </p>
+        </div>
+        <div class="grid_100">
+          <h3>Grid Rows:</h3>
+          <h6>elements</h6>
+          <p>
+            &lt;header&gt; / &lt;section&gt; / &lt;fieldset&gt; / or as a class &lt;div class="section"&gt;
+          </p>
+          <p>
+            Once the grid is applied to the container you can begin constructing your grid with <em>section</em> elements and container elements.
+            The <em>&lt;section&gt;</em> element essentially functions as a row in your grid. If your not using HTML5 (Why aren't you?) you may also use a &lt;div&gt; with a class of <em>.section</em>. The &lt;header&gt; element and the &lt;fieldset&gt; element also behave as a row/section and do not require a parent section.
+          </p>
+
+        </div>
+        <div class="grid_100">
+          <h3>Grid Columns:</h3>
+          <h6>mixins</h6>
+          <p>
+            grid_10( ) / grid_20( ) / grid_25( ) / grid_30( ) / grid_33( ) / grid_40( ) / grid_50( ) / grid_60( ) / grid_70( ) / grid_75( ) / grid_80() / grid_90( ) / grid_100( )
+          </p>
+          <p>
+            Containers within these sections can be given their column widths by using the appropriate grid_<em>Width%</em>() mixin or by using a .grid_<em>Width%</em> class in your HTML.
+            These mixins define the column widths of your grid elements. With these combinationations virtually any configuration you can dream up can be created. Each is also available as class for use directly in your non-semantic html. This can make prototyping a layout quick and then later they can made semantic.
+          </p>            
+        </div>
+        <section>
+          <h3>A Semantic Grid Example:</h3>
+          <div class="grid_50">
+            <p>An example of a 2-column layout with a header and footer.</p>
+            <h6>HTML</h6>
+            <code>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    ...
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;examplepage&quot;&gt;
+      &lt;header&gt;
+        Content...
+      &lt;/header&gt;
+      &lt;section id=&quot;content&quot;&gt;
+        &lt;sidebar&gt;
+          Content...
+        &lt;/sidebar&gt;
+        &lt;article&gt;
+          Content...
+        &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;div id=&quot;footer&quot;&gt;
+          Content...
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code>
+          </div>
+          <div class="grid_50">
+            <p><a href="example.html">View this example</a> with some content and color added for clarity.</p>
+            <h6>Stylus</h6>
+            <code>
+@import "fluidity/fluidity"
+
+#examplepage
+  grid()
+#content
+  sidebar
+    grid_30()
+  article
+    grid_70()
+#footer
+  grid_100()            
+            </code>
+          </div>
+        </section>
+      </section>       
     </section>
-    <section>
+    <section id="typography">
       <h1>Typography</h1>
       <div class="type1">
         <h1>Heading 1</h1>
@@ -65,16 +192,87 @@
         <h3>Paragraphs:</h3>
         <p><strong>Integer posuere erat a ante venenatis</strong> dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. <em>Integer</em> posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <h3>Address blocks:</h3>
-        <address>
-          <strong>Inkspeck Design</strong><br />
-          2962 Remington Ridge Rd. <br />
-          Columbus, Ohio 43232 <br />
-          <abbr title="phone">Ph: </abbr> 614-264-2782 <br />
-        </address>
       </div>
+      <section>
+        <h3>Lists:</h3>
+        <div class="grid_33">
+          <h6>Description Lists</h6>
+          <dl>
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+          </dl>          
+        </div>
+        <div class="grid_33">
+          <h6>Unordered</h6>
+          <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <ul>
+              <li>Nulla volutpat aliquam velit</li>
+              <li>Phasellus iaculis neque</li>
+              <li>Purus sodales ultricies</li>
+              <li>Vestibulum laoreet porttitor sem</li>
+            </ul>
+            <li>Ac tristique libero volutpat at</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+          </ul>
+        </div>
+        <div class="grid_33">
+          <h6>Ordered</h6>
+          <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Ac tristique libero volutpat at</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+          </ol>
+        </div>
+      </section>
+      <section>
+        <div class="grid_33">
+          <h3>Address blocks:</h3>
+          <address>
+            <strong>Inkspeck Design</strong><br />
+            2962 Remington Ridge Rd. <br />
+            Columbus, Ohio 43232 <br />
+            <abbr title="phone">Ph: </abbr> 614-264-2782 <br />
+          </address>
+        </div>
+        <div class="grid_33">
+          <h3>Pre & Code Blocks:</h3>
+          <h6>Stylus</h6>
+          <code>
+// Border-Radius
+
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  -o-border-radius n
+  border-radius n            
+          </code>
+        </div>
+        <div class="grid_33">
+          <h3>Blockquotes:</h3>
+          <blockquote>
+            <p>Dream in a pragmatic way.</p>
+            <small>Aldous Huxley</small>
+          </blockquote>
+        </div>
+      </section>
     </section>
-    <section>
+    <section id="css3">
       <h1>CSS 3 Mixins</h1>
       <div class="border-radi">
         <h3>Border-Radius Mixins:</h3>
@@ -226,6 +424,23 @@
       </div>
     </section>
     <section>
+      <div class="transforms_transititions_animation">
+        <h3>Transforms, Transitions, & Animations:</h3>
+        <p>
+          To be written....
+        </p>
+        <div id="stage">
+          <div class="hypnotize-y">
+            <div class="hypnotize-x">
+              <div class="spinner">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="transition-me">
+        </div>
+      </div>
+    <section id="ui">
       <h1>UI Elements</h1>
       <div class="element">
         <h3>Tabs:</h3>
@@ -256,7 +471,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="forms">
       <h1>Forms</h1>
       <div class="fullexampleform">
         <h3>A Vertical Form:</h3>
@@ -359,7 +574,7 @@
     </section>
     <section>
       <div class="footer">
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+        <p>Fluidity CSS created by <a href="http://www.inkspeck.com">InkSpeck Design</a><span class="copyright"></span></p>
       </div>
   </div>
 </body>
