@@ -1,12 +1,12 @@
-// Set the width of the grid in % or px
+// Set the width of the grid in %
 // Set the minwidth of the grid in px
 
-gridWidth = 90%  
+gridWidth = 80%  
 minWidth = 960px 
 
 // Apply the grid() Mixin to any container element in your CSS.
 // Or
-// Create a parent div using the .grid class.
+// Create a parent div using the .grid convenience class.
 
 grid()
   position relative
@@ -24,6 +24,7 @@ body
   height 100%  
 
 header
+footer
 feildset
 section
 .section 
@@ -34,6 +35,7 @@ section
   height 100%
   margin 0 
   padding 0
+  clear both
     
 column()
   position relative 
@@ -42,6 +44,12 @@ column()
   height 100%
   margin 0
   padding 0
+
+// Custom Column Widths
+
+grid_custom(width) // You can also choose an arbitray percentage width for your column but, REMEMBER: Your columns must add up to 100%.
+  column()
+  width width
 
 // Use these Mixins with your semantic ids & classes to create 
 // a grid without any additional classes in your HTML.

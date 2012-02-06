@@ -1,23 +1,22 @@
 @import "fluidity/fluidity"
-
 #container
   grid()
-
 header
   grid_100()
 
-.centeredform form
- width 500px
- margin 0 auto
-    
+sidebar
+  grid_30()
 article
   grid_70()
 
-.highlights
-  grid_50()
+#arbitrary_one
+  grid_custom 23%
+#arbitrary_two
+  grid_custom 44%
+#arbitrary_three
+  grid_custom 33%
 
-aside
-  grid_30()
+footer
+  text-align center
+  
 
-.more-articles
-  grid_33()

@@ -1,6 +1,3 @@
-
-// Border-Radius
-
 border-radius(n)
   -webkit-border-radius n
   -moz-border-radius n
@@ -32,8 +29,8 @@ border-bottom-right-radius(n)
   border-bottom-right-radius n
 
 // Box Shadow
-//A full fallback box-shadow helper for total control
 
+//An implicit box shadow helper for more than one shadow if necessary
 box-shadow()
   -moz-box-shadow arguments
   -webkit-box-shadow arguments
@@ -41,7 +38,6 @@ box-shadow()
   box-shadow arguments
 
 // A single outset shadow
-
 shadow(x,y,b,c)
   -moz-box-shadow x y b c
   -webkit-box-shadow x y b c
@@ -49,16 +45,13 @@ shadow(x,y,b,c)
   box-shadow x y b c
 
 // Inset Shadow
-
 inshadow(x,y,b,s,c)
   -webkit-box-shadow inset x y b s c
   -moz-box-shadow inset x y b s c
   -o-box-shadow inset x y b s c
   box-shadow inset x y b s c
 
-// Gradients
-// Vertical Gradient - A 3 color linear gradient from top-middle-bottom
-
+// Smooth 3 color linear gradients from the top to bottom
 gradient(beginning, middle, end)
   background-color end
   background-image -webkit-gradient(linear, left bottom, left top, color-stop(0.19,end), color-stop(0.64,middle), color-stop(1,beginning))
@@ -66,8 +59,7 @@ gradient(beginning, middle, end)
   background-image -o-linear-gradient(top,beginning,end)
   background-image linear-gradient(center bottom, end 19%, middle 64%, beginning 100%)
 
-// Horoizontal Gradient - A 3 color linear gradient from the left-middle-right
-
+// Smooth 3 color linear gradients from the left to right
 hgradient(beginning, middle, end)
   background-color end
   background-image -webkit-gradient(linear, left top, right top, color-stop(0.19,end), color-stop(0.64,middle), color-stop(1,beginning))
@@ -75,129 +67,20 @@ hgradient(beginning, middle, end)
   background-image -o-linear-gradient(left, beginning, end)
   background-image linear-gradient(left center, end 19%, middle 64%, beginning 100%)
 
-// Radial Gradient - A circular farthest-side radial gradient with these
-// options (pos x, pos y, radial color, end color)
+// Simple Radial Gradients options (pos x, pos y, radial color, end color)
 
 rgradient(x,y,r,e)
   background-color e
   background-image -moz-radial-gradient(x y, circle farthest-side, r, e 100%)
   background-image -webkit-gradient(radial, x y, 0px, x y, minWidth, from(r), to(e))
   background-image -webkit-radial-gradient(x y, circle, r, e)
+  background-image -o-radial-gradient(x y, circle farthest-side, r, e 100%)
   background-image radial-gradient(x y, circle farthest-side, r, e 100%)
 
 // Opacity
-
 opacity(a)
   opacity a
   -webkit-opacity a
   -moz-opacity a
   -o-opacity a
-
-// Transform
-
-transform()
-   -webkit-transform arguments
-   -moz-transform arguments
-   -o-transform arguments
-   transform arguments
-
-// Transitions
-
-transition()
-  if arguments[0] == 'transform'
-    -webkit-transition -webkit-transform arguments[1..3]
-    -moz-transition -moz-transform arguments[1..3]
-    -o-transition -o-transform arguments[1..3]
-    transition transform arguments[1..3]
-  else  
-    -webkit-transition arguments
-    -moz-transition arguments
-    -o-transition arguments
-    transition arguments
-
-// One Caveat, Transitioning the transform property explicitly
-// Just be sure to list transform as the first argument for transition-property.
-// As it stands, you can select up to 10 properties, if you need more
-// you don't, just use 'all' instead.
-
-transition-property()
-   if arguments[0] == 'transform'
-     more_args = unquote(join(', ', arguments[1..9]))
-     -webkit-transition-property -webkit-transform, more_args
-     -moz-transition-property -moz-transform, more_args
-     -o-transition-property -o-transform,  more_args
-     transition-property transform, more_args
-   else  
-     -webkit-transition-property arguments
-     -moz-transition-property arguments
-     -o-transition-property arguments
-     transition-property arguments  
-
-transition-duration()
-   -webkit-transition-duration arguments
-   -moz-transition-duration arguments
-   -o-transition-duration arguments
-   transition-duration arguments
-
-transition-timing-function()
-   -webkit-transition-timing-function arguments
-   -moz-transition-timing-function arguments
-   -o-transition-timing-function arguments
-   transition-timing-function arguments
-
-transition-delay()
-   -webkit-transition-delay arguments
-   -moz-transition-delay arguments
-   -o-transition-delay arguments
-   transition-delay arguments
-
-// Animation
-// Sets Vendor Prefixes for defining @keyframes animations
-// Opera Does not support @keyframe animations
-
-vendors = webkit moz official
-
-animation()
-  -webkit-animation arguments
-  -moz-animation arguments
-  animation arguments
-
-animation-name()
-  -webkit-animation-name arguments
-  -moz-animation-name arguments
-  animation-name arguments
-
-animation-duration()
-  -webkit-animation-duration arguments
-  -moz-animation-duration arguments
-  animation-duration arguments
-
-animation-delay()
-  -webkit-animation-delay arguments
-  -moz-animation-delay arguments
-  animation-delay arguments
-
-animation-direction()
-  -webkit-animation-direction arguments
-  -moz-animation-direction arguments
-  animation-direction arguments
-
-animation-iteration-count()
-  -webkit-animation-iteration-count arguments
-  -moz-animation-iteration-count arguments
-  animation-iteration-count arguments
-
-animation-timing-function()
-  -webkit-animation-timing-function arguments
-  -moz-animation-timing-function arguments
-  animation-timing-function arguments
-
-animation-play-state()
-  -webkit-animation-play-state arguments
-  -moz-animation-play-state arguments
-  animation-play-state arguments
-
-animation-fill-mode()
-  -webkit-animation-fill-mode arguments
-  -moz-animation-fill-mode arguments
-  animation-fill-mode arguments
+  filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(a * 100) + ')')

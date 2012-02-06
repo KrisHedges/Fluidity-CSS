@@ -284,7 +284,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Verdana, Arial;
 }
 p {
-  margin: 1.8em;
+  margin: 1.6em;
   line-height: 1.2em;
 }
 h1,
@@ -344,6 +344,54 @@ code {
   font-size: 0.875em;
   font-family: "Courier New", Courier, monospace, sans-serif;
   overflow: auto;
+}
+ol,
+ul {
+  margin: 0 0 1.5em 2.5em;
+}
+ul > ul {
+  margin: 0 0 0 2.5em;
+}
+ul {
+  list-style: disc;
+}
+li {
+  line-height: 1.4em;
+}
+dl {
+  margin: 0 1.8em;
+}
+dd,
+dt {
+  line-height: 1.4em;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 1em;
+}
+blockquote {
+  font-size: 0.9 em;
+  margin: 2em;
+}
+blockquote p {
+  line-height: 1.1em;
+  margin: 0.5em 1em;
+  font-style: italic;
+}
+blockquote p:before {
+  content: open-quote;
+}
+blockquote p:after {
+  content: close-quote;
+}
+blockquote small {
+  margin: 0 1em;
+  font-size: 0.8em;
+}
+blockquote small:before {
+  content: "\2014 \00A0";
 }
 fieldset {
   position: relative;
@@ -872,6 +920,15 @@ input[type=file] {
 header {
   background-color: #d1d1d1;
   height: 175px;
+}
+.one_percent {
+  position: relative;
+  float: left;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 1%;
 }
 #content sidebar {
   position: relative;
