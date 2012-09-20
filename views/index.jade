@@ -177,7 +177,7 @@ block content
            | grid-min-width = 320px
            | base-font-size = 1em  
            | base-line-height = 1.25em  
-           | vendors = webkit moz o
+           | vendors = webkit moz o official
            | @import \"fluidity\"
            | @import \"fluidity/forms\"         
            | @import \"fluidity/elements\"         
@@ -634,5 +634,39 @@ block content
              | Columbus, Ohio <br/>
      section#css3
        h1 CSS3
+       .css3-explanation  
+         p
+           | Fluidity has transparent mixins for the usable CSS3 properties that exist. This means that you just use CSS3 in the purest way and Fluidity will include all of the prefixed versions for you. These mixins provide all of the cross browser prefixes for you based on the "vendors" variable. By default fluidity includes prefixes for webkit (webkit) and mozilla (moz). You can set this variable to include opera (o), Internet Explorer (ms), or you could set it to nothing but true CSS3 with the "official" keyword. When setting this variable be sure to include official last in the order to ensure it gets included and not overridden.
+       .css3-mixins
+         p
+           | The following CSS3 Properties have transparent mixins:
+         .mixin-list
+           ul
+             li opacity
+             li border-radius
+             li box-shadow
+             li border-image
+             li background-size
+             li background-origin
+             li background-clip
+             li transform
+             li backface-visibilty
+             li perspective
+             li animation
+             li animation-name
+             li animation-duration
+             li animation-timing-function
+             li animation-delay
+             li animation-iteration-count
+             li animation-direction
+             li animation-play-state
+             li animation-fill-mode
+             li transition
+             li columns
+             li column-count
+             li column-gap
+             li column-rule
+             li appearance
+             li box-sizing
 
 

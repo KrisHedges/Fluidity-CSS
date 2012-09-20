@@ -8,7 +8,6 @@ publicDir = "./public"
 
 app = express()
 app.use assets()
-app.use "/phimages", express.static './public/phimages'
 app.use "/images", express.static './public/images'
 app.set "view engine", "jade"
 app.set('view options', { debug: true, pretty: true })
