@@ -1,0 +1,637 @@
+extends layout
+block content
+  .topbar
+    .topbar-inner
+      section
+        .logo-animation
+          .stage
+          h1 Fluidity
+        .navigation
+          .pills-holder
+            ul.pills
+              li
+                a(href='#installation') Install
+              li
+                a(href='#usage') Usage
+              li
+                a(href='#grid') Grid
+              li
+                a(href='#typography') Type
+              li
+                a(href='#css3') CSS3
+              li#github
+                | <a href='https://github.com/InkSpeck/fluidity' target='_blank'><img src='/images/octocat.png'/>github</a>
+
+  .container
+     header
+       .stage
+       .header-inner
+         h1 Fluidity
+         h4 A Lightweight CSS Framework for HTML5 
+         h5 With A CSS Reset, Base Typography, Semantic Grid, and Transparent Mixins for CSS3.
+     section#about
+       .is
+         h1 What it is?
+         p 
+           | Fluidity is an extremely lightweight CSS framework made for web designers 
+           | who want a framework simple enough to quickly express their ideas, smart enough to help with the mundane, 
+           | and lean enough to stay out of the way when the time comes to do some serious design.
+         p    
+           | It's built using the awesome Stylesheet language <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> and all the  
+           | super powers it has for working with CSS. Fluidity contains a complete CSS reset, some base-line 
+           | typography, a grid system that can be used semantically or with inline classes to create both fluid-width and fixed-width 
+           | designs, a collection of transparent mixins that gracefully handle browser pre-fixes for CSS3 properties, and it also has
+           | some optional modules for forms and common UI elements.
+         h1 Who's it for?    
+         p
+           | Fluidity is for any web designer that knows how to use CSS and want to use CSS3 features now, a fluid semantic and responsive grid, and code their CSS in a clean and maintainable way using a powerful stylesheet language. 
+           | There is a slight learning curve for designers who have never used <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> before, so it is highly recommended that 
+           | you familiarize yourself with the Stylus Stylesheet language and the <a href="http://nodejs.org/" target="_blank">Node.js</a> enivironment. 
+           strong Both Node.js and Stylus are required to use Fluidity.
+        .isnt
+          h1 What it is not?    
+          .isnt-inner 
+            p It is not a web design in a box. If you want a great looking design it's up to you to design it.
+            p It is not a giant collection of classes to memorize. In fact, if you use HTML5 and the provided semantic grid, Fluidity will not require you to add any classes to your mark up.
+            p It is not a library of widgets. While some designed UI elements like pills & tabs are provided in the optional modules there is no javascript provided for their functionality it's up to you to implement them.
+            p It is not a collection of javascript plugins. In fact, no javascript is included with Fluidity at all, with the exception of some Node/Npm packaging stuff in the source which is not a part Fluidity itself.
+            p It is not a series of shims, fixes, or browser hacks. Fluidity is targeted directly at HTML5. The CSS3 Mixins are transparent CSS3 syntax and cross-browser prefixes are handled with a vendors variable. If you have difficult browser compatibility requirements and need support for older browsers it is up to you to provide the shims and/or monkey patches.
+     section#installation
+       h1 Installation
+       .node
+         h3 
+           | With Node.js for Connect (Express) Based apps
+         p
+           | You'll first need to install <a href="http://nodejs.org/" target="_blank">Node.js</a> <br />
+           | After you have Node installed you should have access to npm. Installing fluidity should install all needed dependencies including Stylus.
+         h6 Commandline
+         code
+           | npm install fluidity
+         p 
+           strong Example usage with Stylus Connect Middleware
+         h6 Javascript
+         code
+           | var connect = require('connect'),
+           |     stylus = require('stylus'),
+           |     fluidity = require('fluidity');
+           | 
+           | var server = connect();
+           | 
+           | function compile(str, path) {
+           |   return stylus(str)
+           |   .set('filename', path)
+           |   .use(fluidity());
+           | }
+           | 
+           | server.use(stylus.middleware({
+           |   src: __dirname,
+           |   compile: compile
+           | }));
+         p 
+           strong Example Using Connect-Assets
+         h6 Javascript
+         code
+           | var fluidity = require('fluidity');
+         p
+           | That's it! You should now be able to use @import in your .styl files.
+           | You may also want to add Fluidity to your package.json file.  
+         .important-note    
+           p
+             em 
+              strong Note: 
+              | There is no official support for Fluidity within connect-assets at this time. So, for the time being you can use <a href="https://github.com/InkSpeck/connect-assets" target="_blank">this</a> fork or look <a href="https://github.com/InkSpeck/connect-assets/commit/4d9db1be8f5318ec0e98901087ebb7242f577eec" target="_blank">here</a> at the diff to make the minor changes on your own.
+       .standalone
+         h3 
+           | Standalone Just Using Stylus
+         p
+           | You'll first need to install <a href="http://nodejs.org/" target="_blank">Node.js</a>.
+           | Afterwards, you will have access to the new command npm. You can then install Stylus and Fluidity with npm.
+         h6 Commandline    
+         code
+           | npm install stylus
+           |  
+           | ### In your working directory
+           | npm install fluidity
+         p
+           | To begin using Fluidity within your stylus files use the @import rule provided by Stylus
+         h6 Stylus
+         code
+           | @import "fluidity"
+         p 
+           | You should now be able to process .styl files into CSS at the commandline with the stylus command. In order for stylus to find Fluidity you can use the "--use" switch.
+         h6 Commandline
+         code
+           | stylus file.styl --use ../fluidity/lib/fluidity
+           | 
+           | // You may also want to -w (watch) switch
+           | // to watch the file for changes and 
+           | // recompile the CSS when your developing.
+         p
+           | For more information about all the commandline options for Stylus visit the <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> docs or type 'stylus --help'
+     section#usage
+       h1 Usage
+       .usage-explanation
+         h6 All
+         p
+           | To begin using Fluidity in your .styl files you simply use the @import rule provided by Stylus. That's it! You know can start using the fluidity in your Stylus code.
+         h6 A Single Piece
+         p 
+           | If you'd like to use just a single piece of Fluidity those are also be available by name. Again you can Just use @import but, you'll also have to include "fluidity/" as the path.
+       .usage-code      
+         h6 Stylus
+         code
+           | @import "fluidity"
+         h6 Stylus
+         code
+           | // Just use the Reset and Grid
+           | @import "fluidity/reset"
+           | @import "fluidity/grid"
+     section#global-variables        
+       h3 Global Variables
+       .global-variables-explanation
+         p
+           | There are a handful of global variables that you'll probably want to set in your .styl files before the @import statement for fluidity. These aren't required as there are some defaults, but you'll likely want to change at least some of them to suit your needs.
+         h6 Variables    
+         ul
+           li 
+             strong grid-width - 
+             | This is the width of the grid in percentage for fluid-width or in pixels for fixed-width. Default is 100%
+           li 
+             strong grid-min-width - 
+             | This is the minimum width in pixels allowed by the grid. Default is 960px
+           li 
+             strong base-font-size - 
+             | This is the Base font size to use. <em>Must be in ems</em> Default is 1em
+           li 
+             strong base-line-height - 
+             | This is the default line-height to use. <em>Must be in ems</em> Default is 1.35em
+           li 
+             strong vendors - 
+             | This variable is actually used by Stylus itself to determine browser prefixes to use for @keyframes among other things. Fluidity uses this variable for its own browser prefixes for its CSS3 mixins. The Default is webkit & moz.
+       .global-variables-code
+         p      
+           | Here is an example configuration that would be at the top of your .styl file making a fluid width grid down to mobile size, setting a base font-size and line-height, and allowing browser prefixes to be used for Webkit, Mozilla, and Opera.
+         h6 Stylus
+         code
+           | grid-width = 100%
+           | grid-min-width = 320px
+           | base-font-size = 1em  
+           | base-line-height = 1.25em  
+           | vendors = webkit moz o
+           | @import \"fluidity\"
+           | @import \"fluidity/forms\"         
+           | @import \"fluidity/elements\"         
+     section#grid
+       h1 The Grid
+       h3 Grid Configuration Variables
+       .grid-configuration-variables-code
+         h6 Stylus
+         code
+           | // Fluid-layout down to mobile size
+           | grid-width = 100%
+           | grid-min-width = 320px
+           |  
+           | // Fixed-layout 
+           | grid-width = 960px
+           | grid-min-width = 960px
+       .grid-configuration-variables-explanation
+         h6 Grid Configuration Variables
+         p
+           | For example a grid-width of 100% and a grid-min-width of 320px would allow the layout to expand to the full width of any viewport and shrink down to the mobile friendly width of 320px, no smaller.
+         p
+           | A <strong>Fixed Width</strong>
+           | layout can be achieved by setting both grid-width and grid-min-width to the same width in <em>px</em>.
+     section#create-grid
+       h3 Creating a Grid
+       .create-grid-code
+         h6 HTML
+         code
+           | &lt;!-- Semantic --&gt;
+           | &lt;div id="your-container"&gt;
+           | &lt;/div&gt;  
+         h6 Stylus
+         code
+           | #your-container
+           |   grid()
+         h6 Stylus
+         code
+           | #your-container
+           |   grid(50%,400px)
+         h6 HTML
+         code
+           | &lt;!-- Non-Semantic --&gt;
+           | &lt;div class="grid"&gt;
+           | &lt;/div&gt;  
+       .create-grid-explanation
+         h6 The Semantic Grid
+         p
+           | The grid in Fluidity is highly versatile and easy to understand. 
+           | You apply the grid() mixin to which ever element  you would like to contain the grid.
+           | It can be done entirely in the Stylus/CSS and there's no need for an additional class in your HTML.
+         p
+           | Using just the grid() mixin as it is, will instantiate a grid with the defaults set by the grid-width and grid-min-width variables but,
+           | those variables can easily be overridden when you instantiate the grid by simply including them as arguments when you call the mixin.<br/>
+         p    
+           | The grid mixin takes two arguments the first for the grid-width and the second for grid-min-width.
+         h6 The Non-Semantic Grid    
+         p 
+           | The grid can also be instantiated in a non-semantic way by using the ".grid" class in your HTML. 
+           | This will instantiate a grid with the defaults set by the grid-width and grid-min-width variables.
+         .important-note    
+           p    
+             em 
+               | Note:<br/>
+               | Overriding the grid-width and grid-min-width variables with just the HTML class
+               | is not possible in a non-semantic grid. You'll have to just use these variables in your Stylus code.
+     section#sections-spaces
+       h2 Sections & Spaces
+       .sections-spaces-explanation
+         h4 A Different Kind of Grid.
+         p
+           | Unlike other CSS grids, Fluidity does not use the same table-like concept of rows & columns. 
+           | Instead of the usual print inspired multi-column style grid where the designer has to think about how wide a column is, what 
+           | margins exist between them, and the usual "wait... how many columns wide <em>is</em> 315px?" Fluidity focuses on the screen and the varying 
+           | screensizes in our world by describing things in terms of percentage of screen size or exact pixels 
+           | which is much easier to visualize, plan around, and ultimately understand.   
+         p
+           | The grid in Fluidity is made up of Sections & Spaces. A <em>Section</em> is like a row in that it delineates a horizontal
+           | area, but a <em>Space</em> is much different than a column in that it doesn't necessarily fill the entire vertical space of the <em>Section</em>
+           | it's in. This means that a <em>Section</em> can contain <em>Spaces</em> in a floated manner as well as, in a rigid row and that means more freedom.  
+     section#sections
+       h3 Sections 
+       .sections-code
+         h6 HTML  
+         code
+           | &lt;!-- Semantic --&gt;
+           | &lt;header&gt;
+           | &lt;/header&gt;
+           | 
+           | &lt;section&gt;
+           | &lt;/section&gt;
+           |  
+           | &lt;footer&gt;
+           | &lt;/footer&gt;
+           | 
+           | &lt;fieldset&gt;
+           | &lt;/fieldset&gt;
+
+         h6 HTML
+         code
+           | &lt;!-- Non-Semantic --&gt;
+           | &lt;div class="header"&gt;
+           | &lt;/div&gt;
+           |  
+           | &lt;div class="section"&gt;
+           | &lt;/div&gt;
+           |  
+           | &lt;div class="footer"&gt;
+           | &lt;/div&gt;
+       .sections-explanation      
+         h6 Semantic Sections
+         p    
+           | Sections are something that you shouldn't have to think too much about so long as, you are using the HTML5 &lt;header&gt;, &lt;section&gt;, and &ltfooter&gt; element to divy up your content on screen.
+         p    
+           | Sections are automatically attached to several HTML5 elements, those elements are:
+           ul
+             li 
+               strong
+                 | header
+             li 
+               strong
+                 | footer
+             li 
+               strong
+                 | section 
+             li 
+               strong
+                 | fieldset 
+               | (not <em>strictly</em> an HTML5 element but, useful nonetheless for HTML forms)
+           h6 Non-Semantic Sections
+           p 
+             | There is a set of classes that can be given to div elements to create sections in a Non-Semantic way if your document isn't using HTML5 elements or if you are shimming older markup.
+             ul
+               li 
+                 strong
+                   | .header
+               li 
+                 strong
+                   | .footer
+               li 
+                 strong
+                   | .section     
+     section#spaces
+       h3 Spaces
+       section  
+         h6 Semantic Spaces
+         .spaces-code-explanation
+           p  
+             | Here we can see that we've instantiated a grid onto &lt;div id="#some-container"&gt; and we have a <em>Section</em> created by using a section element. We have also introduced two <em>Spaces</em> "#some-article" and "#some-sidebar" into the grid.
+             | These two <em>Spaces</em> are created by using the grid-space() mixin. This mixin takes one argument the width in percentage or pixels if your using a fixed-layout. So what we have created is a two-column layout with an article which is 70% of 
+             | the grid-width wide and a sidebar on the right that is 30% of the grid-width wide. You can probably picture that in your head, right?
+         .spaces-code-html
+           h6 HTML
+           code
+             | &lt;div id="some-container"&gt;
+             |   &lt;section&gt;
+             |     &lt;article id="some-article"&gt;
+             |       &lt;p&gt;
+             |         Some Content ...
+             |       &lt;/p&gt;
+             |     &lt;/article&gt;
+             |     &lt;aside id="some-sidebar"&gt;
+             |       &lt;p&gt;
+             |         Some Content ...
+             |       &lt;/aside&gt;
+             |     &lt;/div&gt;
+             |   &lt;/section&gt;
+             | &lt;/div&gt;
+         .spaces-code-stylus
+           h6 Stylus
+           code
+             | @import "fluidity"
+             | #some-container
+             |   grid()
+             |   #some-article
+             |     grid-space(70%)
+             |   #some-sidebar
+             |     grid-space(30%)
+       section
+         h6 Non-Semantic Spaces
+         .spaces-code-non-semantic-explanation
+           p  
+             | For non-semantic spaces you can use the <em>grid-space-(n)</em> classes, where (n) is the number representing the width percentage. These classes exist for the numbers 1-100.
+         .spaces-code-non-semantic-html
+           h6 HTML
+           code
+             | &lt;div class="grid"&gt;
+             |   &lt;div class="section"&gt;
+             |     &lt;article class="grid-space-70"&gt;
+             |       &lt;p&gt;
+             |         Some Content ...
+             |       &lt;/p&gt;
+             |     &lt;/article&gt;
+             |     &lt;aside class="grid-space-30"&gt;
+             |       &lt;p&gt;
+             |         Some Content ...
+             |       &lt;/p&gt;
+             |     &lt;/aside&gt;
+             |   &lt;/div&gt;
+             | &lt;/div&gt;
+         .spaces-code-non-semantic-stylus
+           h6 Stylus
+           code
+             | @import "fluidity"
+     section#grid-examples
+       h3 Some Grid Examples
+       section  
+         .two-column-example-code-explanation
+           h4 A Two Column Layout  
+           p
+             | Here's an example of a two column layout with a header and footer. You can view this example filed in with lipsum  <a href="two-column-example" target="_blank">here</a>.
+           .important-note    
+             p
+               em 
+                strong Note: 
+                | For brevity in the following example we're using the jade markup language instead of HTML. You can get more info about jade <a href="http://www.jade-lang.com" target="_blank">here</a>.
+         .two-column-example-code-html
+           h6 Jade
+           code
+             | !!! 5
+             | html
+             |   head
+             |     .... include your css!
+             |   body
+             |     #examplepage
+             |       header
+             |         h1 Content...
+             |       section#content
+             |         sidebar
+             |           p Content...
+             |         article
+             |           p Content...
+             |       footer
+             |         p Content... 
+         .two-column-example-code-stylus
+           h6 Stylus
+           code
+              |  @import "fluidity"
+              | 
+              |  #examplepage
+              |    grid(80%,960px)
+              | 
+              |  header
+              |    background-color darkgray2
+              |    color white  
+              | 
+              |  #content
+              |    sidebar
+              |      grid-space(30%)
+              |    article
+              |      grid-space(70%)
+              | 
+              |  footer
+              |    background-color lightgray2
+              |    text-align center  
+       section        
+         .three-column-example-code-explanation
+           h4 A Three Column Layout  
+           p
+             | Here's an example of a three column layout with a header and footer. You can view this example filed in with lipsum  <a href="three-column-example" target="_blank">here</a>.
+           .important-note    
+             p
+               em 
+                strong Note: 
+                | For brevity in the following example we're using the jade markup language instead of HTML.
+         .three-column-example-code-html
+           h6 Jade
+           code
+             | !!! 5
+             | html
+             |   head
+             |     .... include your css!
+             |   body
+             |     #examplepage
+             |       header
+             |         h1 Content...
+             |       section
+             |         sidebar#left-menu
+             |           p Content...
+             |         #content
+             |           p Content...
+             |         sidebar#right-menu    
+             |       footer
+             |         h6 Content...
+         .three-column-example-code-stylus
+           h6 Stylus
+           code
+             | @import "fluidity"
+             | 
+             | #examplepage
+             |   grid(90%,480px)
+             | 
+             | header
+             |   background-color darkgray2
+             |   color white  
+             | 
+             | #left-menu
+             |   grid-space(25%)
+             | #content
+             |   grid-space(50%)
+             | #right-menu
+             |   grid-space(25%)
+             | 
+             | footer
+             |   background-color lightgray2
+             |   text-align center          
+       section        
+         .three-column-fixed-example-code-explanation
+           h4 A Three Column Fixed-Width Layout  
+           p
+             | Here's an example of a three column fixed-width layout with a header and footer. <strong>In order to make our three-column-layout fixed-width, you'll notice all we had to do was change the grid-width and grid-min-width variables to the same number in pixels by passing them as arguments to the grid() mixin.</strong> You can view this example filed in with lipsum  <a href="three-column-fixed-example" target="_blank">here</a>.
+           .important-note    
+             p
+               em 
+                strong Note: 
+                | For brevity in the following example we're using the jade markup language instead of HTML.
+         .three-column-fixed-example-code-html
+           h6 Jade
+           code
+             | !!! 5
+             | html
+             |   head
+             |     .... include your css!
+             |   body
+             |     #examplepage
+             |       header
+             |         h1 Content...
+             |       section
+             |         sidebar#left-menu
+             |           p Content...
+             |         #content
+             |           p Content...
+             |         sidebar#right-menu    
+             |       footer
+             |         h6 Content...
+         .three-column-fixed-example-code-stylus
+           h6 Stylus
+           code
+             | @import "fluidity"
+             | 
+             | #examplepage
+             |   grid(960px,960px)
+             | 
+             | header
+             |   background-color darkgray2
+             |   color white  
+             | 
+             | #left-menu
+             |   grid-space(25%)
+             | #content
+             |   grid-space(50%)
+             | #right-menu
+             |   grid-space(25%)
+             | 
+             | footer
+             |   background-color lightgray2
+             |   text-align center          
+     section#typography
+       h1 Typography
+       .headings
+         h4 Headings
+         p  
+           | Headings are in a standard typographic hierarchy and all other copy has sane font-sizes and line-heights.
+         p
+           | Margins for headings are calculated based on base-font-size and base-line-height.
+       .headings-example
+         h6 Headings Example
+         .headings-examples
+           h1 Heading 1
+           h2 Heading 2
+           h3 Heading 3
+           h4 Heading 4
+           h5 Heading 5
+           h6 Heading 6
+       .paragraphs
+         h4 Paragraphs
+         p
+           | Paragraphs have a readable line-height and clear margins. In the first paragraph of the example you can see the &lt;strong&gt; and &lt;em&gt; tags at work. The &lt;b&gt; and &lt;i&gt; are also supported, though they have been redefined in HTML5 and are in most cases not what you want. Find out more in the section title <q>What they're for</q> <cite>W3C,2010</cite> from <a href="http://www.w3.org/International/questions/qa-b-and-i-tags" target="_blank">Using &lt;b&gt; and &lt;i&gt; elements</a> for more.
+         P    
+           | In the last sentence of the previous paragraph was an example of an inline quote with the &lt;q&gt; tag with actual &ldquo;quotes&rdquo; as well as an inline citation with the &lt;cite&gt; tag.
+         h6 Paragraph Example
+         p    
+           | <strong>Integer posuere erat a ante venenatis</strong> Cras justo odio, dapibus facilisis in, egestas eget quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. <em>Integer</em>
+       section
+         h4 Lists, Lists, & Lists
+         .grid-space-33
+           h6 Description Lists
+           dl
+             dt Description Term
+             dd Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+             dl
+               dt Nested Descriptions
+               dd Nullam quis risus eget urna mollis ornare vel eu leo.
+             dd Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+         .grid-space-33
+           h6 Unordered
+           ul
+             li Lorem ipsum dolor sit amet
+             li Facilisis in pretium nisl aliquet
+             ul
+               li Nulla volutpat aliquam velit
+               li Phasellus iaculis neque
+               ul
+                 li Consectetur adipiscing elit
+             li Ac tristique libero volutpat at
+             li Eget porttitor lorem
+         .grid-space-33
+           h6 Ordered
+           ol
+             li Lorem ipsum dolor sit amet
+             li Consectetur adipiscing elit
+             li Integer molestie lorem at massa
+             ol
+               li Lorem ipsum dolor sit amet
+               li Consectetur adipiscing elit
+             li Integer molestie lorem at massa
+             li Facilisis in pretium nisl aliquet
+             li Ac tristique libero volutpat at
+             li Faucibus porta lacus fringilla vel
+             li Aenean sit amet erat nunc
+             li Eget porttitor lorem
+       section
+         .grid-space-38
+           h4 Blockquotes
+           h6 Blockquote Example  
+           | <blockquote>
+           |  <p>Dream in a pragmatic way.</p>
+           |  <cite>Aldous Huxley</cite>
+           | </blockquote>
+           p 
+             | Inside the &lt;blockquote&gt; wrap your quote in a &lt;p&gt; tag to get nice quotes and use the &lt;cite&gt; tag for the source or author.
+           h6 jade
+           code
+             | blockquote
+             |   p Dream in a pragmatic way.
+             |   cite Aldous Huxley
+         .grid-space-38
+           h4 Pre & Code Blocks
+           p
+             | What can be said here, you've been looking at these all throught this page but, here's another one just for fun.
+           h6 Code Example
+           code
+             | // Border-Radius
+             | border-radius(n)
+             |   -webkit-border-radius n
+             |   -moz-border-radius n
+             |   -o-border-radius n
+             |   border-radius n            
+         .grid-space-24
+           h4 Address Blocks
+           h6 Address Example  
+           address
+             | <strong>Inkspeck Design</strong><br/>
+             | 2012 E. Developer Ave. <br/>
+             | Columbus, Ohio <br/>
+
+
+

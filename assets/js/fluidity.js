@@ -1,16 +1,10 @@
 $(document).ready( function(){
-  var d, year, $target, squares, topsquares, headersquares;
-
-  addYearToCopyright = function() {
-    var d = new Date();                   
-    var year = d.getFullYear();
-    $(".copyright").append(" &copy; " + year);
-  };
+  var squares, topsquares, headersquares;
 
   topbarMenu = function() {
     offsetTargetScrollForTopbar = function(){
       $('a[href*=#]').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
            var $target = $(this.hash);
            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
            if ($target.length) {
@@ -21,6 +15,7 @@ $(document).ready( function(){
         };  
       });
     };
+
     $(".topbar h1").click( function(){
        $('html, body').animate({ scrollTop: 0 }, 150);                             
     });
@@ -28,8 +23,8 @@ $(document).ready( function(){
   };
 
   helix = function(){
-    var topsquares = $('#topbar-stage');
-    var headersquares = $("#header-stage");
+    var topsquares = $(".logo-animation .stage");
+    var headersquares = $("header .stage");
     var squares = "<div class='square-x'><div class='square-y'><div class='square'></div></div></div><div class='square2-x'><div class='square2-y'><div class='square2'></div></div></div>";
 
     createHelixes = function(){
@@ -64,10 +59,7 @@ $(document).ready( function(){
   
   init = function() {
     setTimeout("helix()",1500);
-    topbarMenu();                     
-    addYearToCopyright();             
+    topbarMenu()
   };
   init();                     
-
-
 });
