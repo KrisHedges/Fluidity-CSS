@@ -14,26 +14,25 @@ block content
               li
                 a(href='#usage') Usage
               li
-                a(href='#grid') Grid
+                a(href='#typography') Typography
               li
-                a(href='#typography') Type
+                a(href='#grid') Grid
               li
                 a(href='#css3') CSS3
               li#github
                 | <a href='https://github.com/InkSpeck/fluidity' target='_blank'><img src='/images/octocat.png'/>github</a>
-
   .container
      header
        .stage
        .header-inner
          h1 Fluidity
-         h4 A Lightweight CSS Framework for HTML5 
-         h5 With A CSS Reset, Base Typography, Semantic Grid, and Transparent Mixins for CSS3.
+         h4 A Modern CSS3 & HTML5 Framework for Node.js & Stylus
+         h5 Solid Typography, A Fluid and Semantic Grid, and Transparent Mixins for Pure CSS3 Syntax.
      section#about
        .is
          h1 What it is?
          p 
-           | Fluidity is an extremely lightweight CSS framework made for web designers 
+           | Fluidity is a CSS framework made for web designers 
            | who want a framework simple enough to quickly express their ideas, smart enough to help with the mundane, 
            | and lean enough to stay out of the way when the time comes to do some serious design.
          p    
@@ -181,6 +180,104 @@ block content
            | @import \"fluidity\"
            | @import \"fluidity/forms\"         
            | @import \"fluidity/elements\"         
+     section#typography
+       h1 Typography
+       .headings
+         h4 Headings
+         p  
+           | Headings are in a standard typographic hierarchy and all other copy has sane font-sizes and line-heights.
+         p
+           | Margins for headings are calculated based on base-font-size and base-line-height.
+       .headings-example
+         h6 Headings Example
+         .headings-examples
+           h1 Heading 1
+           h2 Heading 2
+           h3 Heading 3
+           h4 Heading 4
+           h5 Heading 5
+           h6 Heading 6
+       .paragraphs
+         h4 Paragraphs
+         p
+           | Paragraphs have a readable line-height and clear margins. In the first paragraph of the example you can see the &lt;strong&gt; and &lt;em&gt; tags at work. The &lt;b&gt; and &lt;i&gt; are also supported, though they have been redefined in HTML5 and are in most cases not what you want. Find out more in the section title <q>What they're for</q> <cite>W3C,2010</cite> from <a href="http://www.w3.org/International/questions/qa-b-and-i-tags" target="_blank">Using &lt;b&gt; and &lt;i&gt; elements</a> for more.
+         P    
+           | In the last sentence of the previous paragraph was an example of an inline quote with the &lt;q&gt; tag with actual &ldquo;quotes&rdquo; as well as an inline citation with the &lt;cite&gt; tag.
+         h6 Paragraph Example
+         p    
+           | <strong>Integer posuere erat a ante venenatis</strong> Cras justo odio, dapibus facilisis in, egestas eget quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. <em>Integer</em>
+       section
+         h4 Lists, Lists, & Lists
+         .grid-space-33
+           h6 Description Lists
+           dl
+             dt Description Term
+             dd Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+             dl
+               dt Nested Descriptions
+               dd Nullam quis risus eget urna mollis ornare vel eu leo.
+             dd Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+         .grid-space-33
+           h6 Unordered
+           ul
+             li Lorem ipsum dolor sit amet
+             li Facilisis in pretium nisl aliquet
+             ul
+               li Nulla volutpat aliquam velit
+               li Phasellus iaculis neque
+               ul
+                 li Consectetur adipiscing elit
+             li Ac tristique libero volutpat at
+             li Eget porttitor lorem
+         .grid-space-33
+           h6 Ordered
+           ol
+             li Lorem ipsum dolor sit amet
+             li Consectetur adipiscing elit
+             li Integer molestie lorem at massa
+             ol
+               li Lorem ipsum dolor sit amet
+               li Consectetur adipiscing elit
+             li Integer molestie lorem at massa
+             li Facilisis in pretium nisl aliquet
+             li Ac tristique libero volutpat at
+             li Faucibus porta lacus fringilla vel
+             li Aenean sit amet erat nunc
+             li Eget porttitor lorem
+       section
+         .grid-space-38
+           h4 Blockquotes
+           h6 Blockquote Example  
+           | <blockquote>
+           |  <p>Dream in a pragmatic way.</p>
+           |  <cite>Aldous Huxley</cite>
+           | </blockquote>
+           p 
+             | Inside the &lt;blockquote&gt; wrap your quote in a &lt;p&gt; tag to get nice quotes and use the &lt;cite&gt; tag for the source or author.
+           h6 jade
+           code
+             | blockquote
+             |   p Dream in a pragmatic way.
+             |   cite Aldous Huxley
+         .grid-space-38
+           h4 Pre & Code Blocks
+           p
+             | What can be said here, you've been looking at these all throught this page but, here's another one just for fun.
+           h6 Code Example
+           code
+             | // Border-Radius
+             | border-radius(n)
+             |   -webkit-border-radius n
+             |   -moz-border-radius n
+             |   -o-border-radius n
+             |   border-radius n            
+         .grid-space-24
+           h4 Address Blocks
+           h6 Address Example  
+           address
+             | <strong>Inkspeck Design</strong><br/>
+             | 2012 E. Developer Ave. <br/>
+             | Columbus, Ohio <br/>
      section#grid
        h1 The Grid
        h3 Grid Configuration Variables
@@ -534,114 +631,35 @@ block content
              | footer
              |   background-color lightgray2
              |   text-align center          
-     section#typography
-       h1 Typography
-       .headings
-         h4 Headings
-         p  
-           | Headings are in a standard typographic hierarchy and all other copy has sane font-sizes and line-heights.
-         p
-           | Margins for headings are calculated based on base-font-size and base-line-height.
-       .headings-example
-         h6 Headings Example
-         .headings-examples
-           h1 Heading 1
-           h2 Heading 2
-           h3 Heading 3
-           h4 Heading 4
-           h5 Heading 5
-           h6 Heading 6
-       .paragraphs
-         h4 Paragraphs
-         p
-           | Paragraphs have a readable line-height and clear margins. In the first paragraph of the example you can see the &lt;strong&gt; and &lt;em&gt; tags at work. The &lt;b&gt; and &lt;i&gt; are also supported, though they have been redefined in HTML5 and are in most cases not what you want. Find out more in the section title <q>What they're for</q> <cite>W3C,2010</cite> from <a href="http://www.w3.org/International/questions/qa-b-and-i-tags" target="_blank">Using &lt;b&gt; and &lt;i&gt; elements</a> for more.
-         P    
-           | In the last sentence of the previous paragraph was an example of an inline quote with the &lt;q&gt; tag with actual &ldquo;quotes&rdquo; as well as an inline citation with the &lt;cite&gt; tag.
-         h6 Paragraph Example
-         p    
-           | <strong>Integer posuere erat a ante venenatis</strong> Cras justo odio, dapibus facilisis in, egestas eget quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. <em>Integer</em>
-       section
-         h4 Lists, Lists, & Lists
-         .grid-space-33
-           h6 Description Lists
-           dl
-             dt Description Term
-             dd Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-             dl
-               dt Nested Descriptions
-               dd Nullam quis risus eget urna mollis ornare vel eu leo.
-             dd Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-         .grid-space-33
-           h6 Unordered
-           ul
-             li Lorem ipsum dolor sit amet
-             li Facilisis in pretium nisl aliquet
-             ul
-               li Nulla volutpat aliquam velit
-               li Phasellus iaculis neque
-               ul
-                 li Consectetur adipiscing elit
-             li Ac tristique libero volutpat at
-             li Eget porttitor lorem
-         .grid-space-33
-           h6 Ordered
-           ol
-             li Lorem ipsum dolor sit amet
-             li Consectetur adipiscing elit
-             li Integer molestie lorem at massa
-             ol
-               li Lorem ipsum dolor sit amet
-               li Consectetur adipiscing elit
-             li Integer molestie lorem at massa
-             li Facilisis in pretium nisl aliquet
-             li Ac tristique libero volutpat at
-             li Faucibus porta lacus fringilla vel
-             li Aenean sit amet erat nunc
-             li Eget porttitor lorem
-       section
-         .grid-space-38
-           h4 Blockquotes
-           h6 Blockquote Example  
-           | <blockquote>
-           |  <p>Dream in a pragmatic way.</p>
-           |  <cite>Aldous Huxley</cite>
-           | </blockquote>
-           p 
-             | Inside the &lt;blockquote&gt; wrap your quote in a &lt;p&gt; tag to get nice quotes and use the &lt;cite&gt; tag for the source or author.
-           h6 jade
-           code
-             | blockquote
-             |   p Dream in a pragmatic way.
-             |   cite Aldous Huxley
-         .grid-space-38
-           h4 Pre & Code Blocks
-           p
-             | What can be said here, you've been looking at these all throught this page but, here's another one just for fun.
-           h6 Code Example
-           code
-             | // Border-Radius
-             | border-radius(n)
-             |   -webkit-border-radius n
-             |   -moz-border-radius n
-             |   -o-border-radius n
-             |   border-radius n            
-         .grid-space-24
-           h4 Address Blocks
-           h6 Address Example  
-           address
-             | <strong>Inkspeck Design</strong><br/>
-             | 2012 E. Developer Ave. <br/>
-             | Columbus, Ohio <br/>
      section#css3
        h1 CSS3
        .css3-explanation  
+         h4 Transparent Mixins
          p
-           | Fluidity has transparent mixins for the usable CSS3 properties that exist. This means that you just use CSS3 in the purest way and Fluidity will include all of the prefixed versions for you. These mixins provide all of the cross browser prefixes for you based on the "vendors" variable. By default fluidity includes prefixes for webkit (webkit) and mozilla (moz). You can set this variable to include opera (o), Internet Explorer (ms), or you could set it to not use any prefixes and only output true CSS3 with the just the "official" keyword. When setting this variable be sure to include official last in the order to ensure it gets included and not overridden.
+           | Fluidity has transparent mixins for all the latest CSS3 properties. This means that you can just use the official CSS3 syntax in the purest way and Fluidity will include all of the prefixed versions for you. These mixins provide all of the cross browser prefixes for you based on the "vendors" variable. By default fluidity includes prefixes for webkit (webkit) and mozilla (moz). You can set this variable to include opera (o), Internet Explorer (ms), or you could set it to not use any prefixes and only output true CSS3 with the just the "official" keyword. When setting this variable be sure to include official last in the order to ensure it gets included and not overridden.
+         p
+           | Basically, a transparent mixin lets you right your code. Once. The right way. <br/>
+           | Here's An example of a transparent mixin. Given a vendors variable of "webkit moz o ms official".
+         h6 Stylus
+         code
+           | #item 
+           |   border-radius 10px
+         h6 Fluidity Will Export the folowing CSS.
+         code
+           | #item {
+           |   -webkit-border-radius: 10px;
+           |   -moz-border-radius: 10px;
+           |   -o-border-radius: 10px;
+           |   -ms-border-radius: 10px;
+           |   border-radius: 10px;
+           | }
+         p
+           | 
        .css3-mixins
-         p
-           | The following CSS3 Properties have transparent mixins:
+         h5 The following CSS3 Properties have transparent mixins:
          .mixin-list
            ul
+             li appearance
              li opacity
              li border-radius
              li box-shadow
@@ -667,6 +685,51 @@ block content
              li column-count
              li column-gap
              li column-rule
-             li appearance
-
-
+             li filter
+     section#gradients
+       h4 CSS3 Gradients
+       section#linear  
+         .linear-gradient-explanation
+           h5 Linear Gradients
+           p The linear gradient function uses the latest and recently finalized official <a href="http://www.w3.org/TR/css3-images/#linear-gradients" target="_blank">CSS3 Syntax</a> and generates the currently implemented but deprecated syntax in the browsers that support the feature this includes the even older syntax of "-webkit-gradient(linear,...)" for legacy webkit browsers.
+         .linear-gradient-example-code
+           h6 Stylus
+           code
+             | #sample-1
+             |   background-image linear-gradient(65deg, #fff, #353535)
+             | #sample-2
+             |   background-image linear-gradient(
+             |     to bottom left, #dadada 40%, #353535 70%, #fafafa 100%
+             |   )
+         .linear-gradient-sample
+           #sample-1.gradient-sample
+             h6 Sample 1
+           #sample-2.gradient-sample
+             h6 Sample 2  
+       section#radial    
+         .radial-gradient-explanation
+           h5 Radial Gradients
+           p The radial gradient function uses the latest and recently finalized official <a href="http://www.w3.org/TR/css3-images/#radial-gradients" target="_blank">CSS3 Syntax</a> and generates the currently implemented but deprecated syntax in the browsers that support the feature.
+           .important-note  
+             p Sadly, due to the vast differences in the syntaxes this does not include the legacy webkit syntax of "-webkit-gradient(radial,...)" 
+          .radial-gradient-example-code
+            h6 Stylus
+            code
+              | #sample-1
+              |   background radial-gradient(at top right, #fff, #353535)
+              | #sample-2
+              |   background radial-gradient(
+              |     ellipse farthest-corner at 0% 100%, #fff 10%, #353535 50%, #dadada 70% 
+              |   )
+              | #sample-3
+              |   background radial-gradient(circle closest-side at 40px 30px, #fff, #353535)
+         .radial-gradient-sample
+           #sample-1.gradient-sample
+             h6 Sample 1
+           #sample-2.gradient-sample
+             h6 Sample 2
+           #sample-3.gradient-sample
+             h6 Sample 3
+     footer
+       #copyright
+         p Created by | <a href="http://www.inkspeck.com" target="_blank" >InkSpeck Design</a>

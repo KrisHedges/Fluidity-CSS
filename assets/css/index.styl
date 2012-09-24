@@ -2,7 +2,7 @@ grid-width = 90%
 grid-min-width = 960px
 base-font-size = 1em  
 base-line-height = 1.35em  
-vendors = webkit moz o official
+vendors = webkit moz o ms official
 @import "fluidity"
 @import "fluidity/elements" 
 @import "fluidity/forms" 
@@ -11,6 +11,9 @@ body
   background-color lightgray3
   margin-top 62px 
   color color
+
+a
+  color black
 
 h6
   color darken(lightgray1,30%)
@@ -46,10 +49,11 @@ h1
       font-size 1.95em
       cursor pointer
       text-shadow 0 1px 1px lightgray3
+      margin-top .725em  
   .navigation
     grid-space(50%)
     .pills-holder
-      width 433px
+      width 450px
       margin 0 auto  
       #github 
         img
@@ -61,17 +65,17 @@ h1
   grid()
   background-color white
   border 1px solid lighten(darkgray3,60%)
-  box-shadow 0 0 6px lighten(darkgray3,60%)
+  box-shadow 0 0 46px lightgray2
 
 header
   grid_100()
   color color
-  rgradient(17%,0%, lightgray3,lightgray1)
+  background radial-gradient(ellipse farthest-corner at top left,lightgray3 0%,lightgray2 40%,lightgray1 70%, lightgray2 100%)
   large()
   border-bottom 1px solid lighten(darkgray3,45%)
   .header-inner 
     width 95.825%
-    margin 20px
+    margin 18px
     padding 0px
     border 1px solid color
     z-index 4
@@ -79,9 +83,11 @@ header
        margin .8em 1em .2em 4em
     h5
        margin .2em 1em 1.2em 4.8em
+       line-height 1.05em  
     h1  
       font-size 2em
-      margin .85em 0 .15em 1em
+      margin 1em 0 .15em 1em
+      padding-bottom .925em  
       text-shadow 0 0 88px white, 0 0 108px white, 0 0 128px white
 
 #about
@@ -116,15 +122,15 @@ header
 
 #grid
   .grid-configuration-variables-code
-    grid-space(40%)
+    grid-space(50%)
   .grid-configuration-variables-explanation
-    grid-space(60%)
+    grid-space(48%)
 
 #create-grid
   .create-grid-code
     grid-space(50%)
   .create-grid-explanation
-    grid-space(50%)
+    grid-space(48%)
 
 #sections-spaces
   .sections-spaces-explanation
@@ -194,13 +200,63 @@ header
 
 #css3
   .css3-explanation  
-    grid-space(50%)
+    grid-space(60%)
   .css3-mixins
-    grid-space(50%)
+    grid-space(40%)
     .mixin-list  
-      columns 200px 2
+      columns 2
+      border-radius 10px  
+      ul
+        list-style-type none
 
+#gradients
+  .linear-gradient-explanation
+    grid-space(25%)
+    min-height 400px  
+  .linear-gradient-example-code
+    grid-space(75%)
+  .linear-gradient-sample
+    grid-space(75%)
+    #sample-1
+      background-image linear-gradient(65deg, white, darkgray3)
+    #sample-2
+      background-image linear-gradient(to bottom left, lightgray2 40%, darkgray3 70%, lightgray3 100%)
+  .radial-gradient-explanation
+    grid-space(25%)
+    min-height 400px  
+  .radial-gradient-example-code
+    grid-space(75%)
+  .radial-gradient-sample
+    grid-space(75%)
+    section()  
+    #sample-1
+      background radial-gradient(at top right, #fff, #353535)
+    #sample-2
+      background radial-gradient(
+        ellipse farthest-corner at 0% 100%, #fff 10%, #353535 50%, #dadada 70% 
+      )
+    #sample-3
+      background radial-gradient(circle closest-side at 40px 30px, white, darkgray3)
+.gradient-sample
+  grid-space(20%)
+  height 100px  
+  border 1px solid lightgray1  
+  margin-top 20px  
+  margin-left 2%
+  h6 
+    position relative
+    top -24px  
+    margin 0
+    padding 0
 
+footer
+  background radial-gradient(ellipse farthest-corner at top left,lightgray2 0%,lightgray1 40%,lightgray3 70%, lightgray2 100%)
+  #copyright
+    grid-space(100%)
+    font-size .8em
+    p  
+      text-align center
+  
 
 // Animation Elements
 .shown
@@ -223,7 +279,7 @@ header
       overflow hidden  
       .square-x
         position absolute
-        left 16%
+        left 89px
         top 26px
         display block
         width 40px
@@ -251,7 +307,7 @@ header
         background-color darken(lightgray1,20%)
       .square2-x
         position absolute
-        left 16%
+        left 89px
         top 26px
         display block
         width 40px
@@ -300,8 +356,8 @@ header
      background-color #fff 
    .square-x
      position absolute
-     left 15%
-     top 28%
+     left 148px
+     top 27%
      display block
      width 40px
      height 200px
@@ -324,8 +380,8 @@ header
      animation-iteration-count infinite
    .square2-x
      position absolute
-     left 15%
-     top 28%
+     left 148px
+     top 27%
      display block
      width 40px
      height 200px
