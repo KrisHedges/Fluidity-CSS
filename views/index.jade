@@ -33,14 +33,13 @@ block content
          h1 What it is?
          p 
            | Fluidity is a CSS framework made for web designers 
-           | who want a framework simple enough to quickly express their ideas, smart enough to help with the mundane, 
-           | and lean enough to stay out of the way when the time comes to do some serious design.
+           | who would like a CSS framework simple enough to quickly express their ideas, smart enough to help with the mundane, 
+           | and lean enough to stay out of the way and let them write pure CSS3 syntax.
          p    
            | It's built using the awesome Stylesheet language <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> and all the  
            | super powers it has for working with CSS. Fluidity contains a complete CSS reset, some base-line 
            | typography, a grid system that can be used semantically or with inline classes to create both fluid-width and fixed-width 
-           | designs, a collection of transparent mixins that gracefully handle browser pre-fixes for CSS3 properties, and it also has
-           | some optional modules for forms and common UI elements.
+           | designs, a collection of transparent mixins that gracefully handle browser pre-fixes for CSS3 properties.
          h1 Who's it for?    
          p
            | Fluidity is for any web designer that knows how to use CSS and want to use CSS3 features now, a fluid semantic and responsive grid, and code their CSS in a clean and maintainable way using a powerful stylesheet language. 
@@ -61,13 +60,29 @@ block content
          h3 
            | With Node.js for Connect (Express) Based apps
          p
-           | You'll first need to install <a href="http://nodejs.org/" target="_blank">Node.js</a> <br />
-           | After you have Node installed you should have access to npm. Installing fluidity should install all needed dependencies including Stylus.
-         h6 Commandline
+           | You'll first need to install <a href="http://nodejs.org/" target="_blank">Node.js</a>.
+           | After you have Node installed you'll have access to 'npm'.
+         h6 Commandline    
          code
+           | ### Install Stylus globally 
+           | ### to use the 'stylus' command
+           | npm install stylus -g
+           |  
+           | ### In your working directory
            | npm install fluidity
-         p 
-           strong Example usage with Stylus Connect Middleware
+         h4 Example Using Connect-Assets
+         h6 Javascript
+         code
+           | var fluidity = require('fluidity');
+         p
+           | That's it! You should now be able to use @import in your .styl files.
+           | You may also want to add Fluidity to your package.json file.  
+         .important-note    
+           p
+             em 
+              strong Note: 
+              | There is no official support for Fluidity within connect-assets at this time. So, for the time being you can use <a href="https://github.com/InkSpeck/connect-assets" target="_blank">this</a> fork or look <a href="https://github.com/InkSpeck/connect-assets/commit/4d9db1be8f5318ec0e98901087ebb7242f577eec" target="_blank">here</a> at the diff to make the minor changes on your own.
+         h4 Example usage with Stylus Connect Middleware
          h6 Javascript
          code
            | var connect = require('connect'),
@@ -86,19 +101,7 @@ block content
            |   src: __dirname,
            |   compile: compile
            | }));
-         p 
-           strong Example Using Connect-Assets
-         h6 Javascript
-         code
-           | var fluidity = require('fluidity');
-         p
-           | That's it! You should now be able to use @import in your .styl files.
-           | You may also want to add Fluidity to your package.json file.  
-         .important-note    
-           p
-             em 
-              strong Note: 
-              | There is no official support for Fluidity within connect-assets at this time. So, for the time being you can use <a href="https://github.com/InkSpeck/connect-assets" target="_blank">this</a> fork or look <a href="https://github.com/InkSpeck/connect-assets/commit/4d9db1be8f5318ec0e98901087ebb7242f577eec" target="_blank">here</a> at the diff to make the minor changes on your own.
+
        .standalone
          h3 
            | Standalone Just Using Stylus
@@ -107,7 +110,9 @@ block content
            | Afterwards, you will have access to the new command npm. You can then install Stylus and Fluidity with npm.
          h6 Commandline    
          code
-           | npm install stylus
+           | ### Install Stylus globally 
+           | ### to use the 'stylus' command
+           | npm install stylus -g
            |  
            | ### In your working directory
            | npm install fluidity
@@ -200,12 +205,9 @@ block content
        .paragraphs
          h4 Paragraphs
          p
-           | Paragraphs have a readable line-height and clear margins. In the first paragraph of the example you can see the &lt;strong&gt; and &lt;em&gt; tags at work. The &lt;b&gt; and &lt;i&gt; are also supported, though they have been redefined in HTML5 and are in most cases not what you want. Find out more in the section title <q>What they're for</q> <cite>W3C,2010</cite> from <a href="http://www.w3.org/International/questions/qa-b-and-i-tags" target="_blank">Using &lt;b&gt; and &lt;i&gt; elements</a> for more.
-         P    
-           | In the last sentence of the previous paragraph was an example of an inline quote with the &lt;q&gt; tag with actual &ldquo;quotes&rdquo; as well as an inline citation with the &lt;cite&gt; tag.
-         h6 Paragraph Example
-         p    
-           | <strong>Integer posuere erat a ante venenatis</strong> Cras justo odio, dapibus facilisis in, egestas eget quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. <em>Integer</em>
+           | Paragraphs have a readable line-height and clear margins. Other typography styles include <strong>strong</strong> & <b>bold</b>, <em>emphasis</em> & <i>italic</i> though they have been redefined in HTML5. Read about this redefining in the following <q>quoted</q> <cite>citation</cite> <q>What they're for</q> <cite>W3C,2010</cite> from <a href="http://www.w3.org/International/questions/qa-b-and-i-tags" target="_blank">Using &lt;b&gt; and &lt;i&gt; elements</a> for more.
+         p
+           | And much, much, more... see below.
        section
          h4 Lists, Lists, & Lists
          .grid-space-33
@@ -245,7 +247,7 @@ block content
              li Aenean sit amet erat nunc
              li Eget porttitor lorem
        section
-         .grid-space-38
+         .grid-space-33
            h4 Blockquotes
            h6 Blockquote Example  
            | <blockquote>
@@ -259,11 +261,13 @@ block content
              | blockquote
              |   p Dream in a pragmatic way.
              |   cite Aldous Huxley
-         .grid-space-38
+         .grid-space-33
            h4 Pre & Code Blocks
            p
-             | What can be said here, you've been looking at these all throught this page but, here's another one just for fun.
-           h6 Code Example
+             | What can be said here, you've been looking at these all throughout this page. 
+           p 
+             | Both pre and code tags produce example blocks like the one below.
+           h6 A Stylus Code Example
            code
              | // Border-Radius
              | border-radius(n)
@@ -271,13 +275,22 @@ block content
              |   -moz-border-radius n
              |   -o-border-radius n
              |   border-radius n            
-         .grid-space-24
+         .grid-space-33
            h4 Address Blocks
+           p 
+             | This first line in an address block is highlighted you just need to include the line-breaks where they belong as usual.
            h6 Address Example  
            address
-             | <strong>Inkspeck Design</strong><br/>
+             | Inkspeck Design <br/>
              | 2012 E. Developer Ave. <br/>
              | Columbus, Ohio <br/>
+           h6 jade
+           code
+             | address
+             |   | Inkspeck Design &lt;br/&gt;
+             |   | 2012 E. Developer Ave.&lt;br/&gt;
+             |   | Columbus, Ohio &lt;br/&gt;
+            
      section#grid
        h1 The Grid
        h3 Grid Configuration Variables
@@ -403,6 +416,8 @@ block content
                strong
                  | fieldset 
                | (not <em>strictly</em> an HTML5 element but, useful nonetheless for HTML forms)
+           p
+             | You may also use the <strong>section()</strong> mixin in your stylus to define a section out of any other div tag.
            h6 Non-Semantic Sections
            p 
              | There is a set of classes that can be given to div elements to create sections in a Non-Semantic way if your document isn't using HTML5 elements or if you are shimming older markup.
