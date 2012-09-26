@@ -1,12 +1,14 @@
 @import "fluidity"
 
 #examplepage
-  grid(90%,480px)
+  grid(90%,800px)
 
 header
   background-color darkgray2
   color white  
-
+  h1  
+    margin 1em
+  
 #left-menu
   grid-space(25%)
 #content
@@ -17,3 +19,25 @@ header
 footer
   background-color lightgray2
   text-align center  
+
+@media screen and (max-width: 800px)
+  #examplepage
+    grid(80%,400px)
+  #left-menu
+    grid-space(40%)
+  #content
+    grid-space(60%)
+  #right-menu
+    grid-space(100%)
+
+@media screen and (max-width: 500px)
+  #examplepage
+    grid(90%,320px)
+  header
+    font-size 0.8em  
+  #left-menu
+    grid-space(100%)
+  #content
+    grid-space(100%)
+  #right-menu
+    grid-space(100%)

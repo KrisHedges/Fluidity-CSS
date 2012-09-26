@@ -38,7 +38,7 @@ block content
          p    
            | It's built using the awesome Stylesheet language <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> and all the  
            | super powers it has for working with CSS. Fluidity contains a complete CSS reset, some base-line 
-           | typography, a grid system that can be used semantically or with inline classes to create both fluid-width and fixed-width 
+           | typography, a grid system that can be used semantically or with in-line classes to create both fluid-width and fixed-width 
            | designs, a collection of transparent mixins that gracefully handle browser pre-fixes for CSS3 properties.
          h1 Who's it for?    
          p
@@ -548,6 +548,8 @@ block content
          .three-column-example-code-explanation
            h4 A Three Column Layout  
            p
+             | <strong>New!</strong> By request this example has been updated to demonstrate a responsive layout down to mobile sizes.
+           p    
              | Here's an example of a three column layout with a header and footer. You can view this example filed in with lipsum  <a href="three-column-example" target="_blank">here</a>.
            .important-note    
              p
@@ -580,21 +582,40 @@ block content
              | 
              | #examplepage
              |   grid(90%,480px)
-             | 
              | header
              |   background-color darkgray2
              |   color white  
-             | 
              | #left-menu
              |   grid-space(25%)
              | #content
              |   grid-space(50%)
              | #right-menu
              |   grid-space(25%)
-             | 
              | footer
              |   background-color lightgray2
-             |   text-align center          
+             |   text-align center    
+             |  
+             | @media screen and (max-width: 800px)
+             |   #examplepage
+             |     grid(80%,400px)
+             |   #left-menu
+             |     grid-space(40%)
+             |   #content
+             |     grid-space(60%)
+             |   #right-menu
+             |     grid-space(100%)
+             | 
+             | @media screen and (max-width: 500px)
+             |   #examplepage
+             |     grid(90%,320px)
+             |   header
+             |     font-size 0.8em  
+             |   #left-menu
+             |     grid-space(100%)
+             |   #content
+             |     grid-space(100%)
+             |   #right-menu
+             |     grid-space(100%)      
        section        
          .three-column-fixed-example-code-explanation
            h4 A Three Column Fixed-Width Layout  
