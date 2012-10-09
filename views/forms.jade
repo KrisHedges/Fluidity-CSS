@@ -1,0 +1,62 @@
+extends forms_layout
+block content
+  .container
+    header
+      .stage
+      .header-inner
+        h1 Fluidity
+        h4 A Modern CSS3 & HTML5 Framework for Node.js & Stylus
+        h5 Solid Typography, A Fluid and Semantic Grid, and Transparent Mixins for Pure CSS3 Syntax.
+    section#forms
+      #form-explanation
+        p Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+        p Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        p Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.
+        p Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      #example-form
+        form
+          section
+            fieldset.name
+              legend Name
+              label First Name:
+              input(type="text")        
+              label Last Name:
+              input(type="text")
+            fieldset.options
+              legend Options
+              label Choose an Option:
+              select
+                option Option 1
+                option Option 2
+                option Option 3
+                option Option 4
+          section        
+            fieldset.sex
+              legend Sex    
+              input(type="radio", name="sex", id="male", value="male") 
+              label(for="male") Male
+              input(type="radio", name="sex", id="female", value="female") 
+              label(for="female") Female  
+            fieldset.allergies
+              legend Allergies 
+              input(type="checkbox", id="checkbox1", name="checkbox1", value="Peanuts") 
+              label(for="checkbox1") Peanuts    
+              input(type="checkbox", id="checkbox2", name="checkbox2", value="Grass")  
+              label(for="checkbox2") Grass  
+              input(type="checkbox", id="checkbox3", name="checkbox3", value="Dust")              label(for="checkbox3") Dust  
+              label(for="checkbox3") Dust 
+          section      
+            fieldset.description
+              legend Description
+              label Describe things:
+              textarea
+          section    
+            fieldset.multi
+              legend Cars
+              label Select many:
+              select( multiple="multiple")
+                option(value="volvo") Volvo
+                option(value="saab") Saab
+                option(value="opel") Opel
+                option(value="audi") Audi
+              button Submit  

@@ -1,6 +1,6 @@
 grid-width = 90%
 grid-min-width = 960px
-base-font-size = 1em  
+base-font-size = 16px
 base-line-height = 1.35em  
 vendors = webkit moz o ms official
 @import "fluidity"
@@ -16,9 +16,16 @@ a
   color darken(lightgray1,40%)
   border-bottom 1px solid darken(lightgray1,40%) 
   text-decoration none  
+
+h1,h2,h3,h4,h5
+  font-weight normal
+  
 h6
   color darken(lightgray1,30%)
   margin-bottom .25em  
+  font-size .8em  
+  font-weight normal
+  text-transform uppercase  
 
 h1
   border-bottom 1px solid color
@@ -186,18 +193,35 @@ header
     grid-space(35%)
 
 #typography
- .headings
-    grid-space(33%)
- .headings-example
-   grid-space(23%)
-   .headings-examples
-     h6
-       color color
-     h1
-       border none
-       padding 0
- .paragraphs
-   grid-space(44%)    
+  .headings
+     grid-space(33%)
+  .headings-example
+    grid-space(23%)
+    h1,h2,h3,h4,h5,h6
+      font-weight bold
+    .headings-examples
+      h6
+        text-transform none  
+        font-size 1em  
+        color color
+      h1
+        border none
+        padding 0
+  .paragraphs
+    grid-space(44%)    
+  .lists-1    
+    grid-space(33%)    
+  .lists-2    
+    grid-space(33%)    
+  .lists-3    
+    grid-space(34%)    
+  .blockquotes
+    grid-space(33%)    
+  .code-blocks
+    grid-space(33%)    
+  .address-blocks   
+    grid-space(33%)    
+
 
 #css3
   .css3-explanation  

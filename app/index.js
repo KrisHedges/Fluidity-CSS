@@ -30,6 +30,10 @@ app.get('/', function(req, res) {
   return res.render('index');
 });
 
+app.get('/forms', function(req, res) {
+  return res.render('forms');
+});
+
 app.get('/two-column-example', function(req, res) {
   return res.render('two_column_example');
 });

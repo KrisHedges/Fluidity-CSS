@@ -1,26 +1,5 @@
 extends layout
 block content
-  .topbar
-    .topbar-inner
-      section
-        .logo-animation
-          .stage
-          h1 Fluidity
-        .navigation
-          .pills-holder
-            ul.pills
-              li
-                a(href='#installation') Install
-              li
-                a(href='#usage') Usage
-              li
-                a(href='#typography') Typography
-              li
-                a(href='#grid') Grid
-              li
-                a(href='#css3') CSS3
-              li#github
-                | <a href='https://github.com/InkSpeck/fluidity' target='_blank'><img src='/images/octocat.png'/>github</a>
   .container
      header
        .stage
@@ -37,7 +16,7 @@ block content
            | and lean enough to stay out of the way and let them write pure CSS3 syntax.
          p    
            | It's built using the awesome Stylesheet language <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> and all the  
-           | super powers it has for working with CSS. Fluidity contains a complete CSS reset, some base-line 
+           | super powers it has for working with CSS. Fluidity now includes normalize.css, some base-line 
            | typography, a grid system that can be used semantically or with in-line classes to create both fluid-width and fixed-width 
            | designs, a collection of transparent mixins that gracefully handle browser pre-fixes for CSS3 properties.
          h1 Who's it for?    
@@ -147,8 +126,8 @@ block content
            | @import "fluidity"
          h6 Stylus
          code
-           | // Just use the Reset and Grid
-           | @import "fluidity/reset"
+           | // Just use Normalize and the Grid
+           | @import "fluidity/normalize"
            | @import "fluidity/grid"
      section#global-variables        
        h3 Global Variables
@@ -210,7 +189,7 @@ block content
            | And much, much, more... see below.
        section
          h4 Lists, Lists, & Lists
-         .grid-space-33
+         .lists-1
            h6 Description Lists
            dl
              dt Description Term
@@ -219,7 +198,7 @@ block content
                dt Nested Descriptions
                dd Nullam quis risus eget urna mollis ornare vel eu leo.
              dd Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-         .grid-space-33
+         .lists-2
            h6 Unordered
            ul
              li Lorem ipsum dolor sit amet
@@ -231,7 +210,7 @@ block content
                  li Consectetur adipiscing elit
              li Ac tristique libero volutpat at
              li Eget porttitor lorem
-         .grid-space-33
+         .lists-3
            h6 Ordered
            ol
              li Lorem ipsum dolor sit amet
@@ -247,7 +226,7 @@ block content
              li Aenean sit amet erat nunc
              li Eget porttitor lorem
        section
-         .grid-space-33
+         .blockquotes
            h4 Blockquotes
            h6 Blockquote Example  
            | <blockquote>
@@ -261,7 +240,7 @@ block content
              | blockquote
              |   p Dream in a pragmatic way.
              |   cite Aldous Huxley
-         .grid-space-33
+         .code-blocks
            h4 Pre & Code Blocks
            p
              | What can be said here, you've been looking at these all throughout this page. 
@@ -275,7 +254,7 @@ block content
              |   -moz-border-radius n
              |   -o-border-radius n
              |   border-radius n            
-         .grid-space-33
+         .address-blocks
            h4 Address Blocks
            p 
              | This first line in an address block is highlighted you just need to include the line-breaks where they belong as usual.
