@@ -8,7 +8,7 @@ html
     link(rel="icon", type="image/png", href="/images/favicon.png")
     // CSS
     != css('index')
-    // JS  
+    // JS
     != js('http://code.jquery.com/jquery.min.js')
     != js('fluidity')
   body
@@ -23,16 +23,16 @@ html
               ul.pills
                 li
                   a(href='#installation') Install
-                li 
+                li
                   a(href='#usage') Usage
-                li 
+                li
                   a(href='#typography') Typography
-                li 
+                li
                   a(href='#grid') Grid
-                li 
+                li
                   a(href='#css3') CSS3
                 li#github
-                  | <a href='https://github.com/InkSpeck/fluidity' target='_blank'><img src='/images/octocat.png'/>github</a>
+                  | <a href='https://github.com/InkSpeck/fluidity' target='_blank'>github</a>
     block content
 
 
@@ -46,4 +46,3 @@ html
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-
