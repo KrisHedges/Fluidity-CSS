@@ -1,49 +1,50 @@
 grid-width = 90%
 grid-min-width = 960px
 base-font-size = 16px
-base-line-height = 1.35em  
+base-line-height = 1.35em
+base-color = #111111
 vendors = webkit moz o ms official
 @import "fluidity"
-@import "fluidity/elements" 
-@import "fluidity/forms" 
+@import "fluidity/elements"
+@import "fluidity/forms"
 
 body
-  background-color lightgray3
-  margin-top 62px 
-  color color
+  background-color lighter-color3
+  margin-top 62px
+  color base-color
 
 a
-  color darken(lightgray1,40%)
-  border-bottom 1px solid darken(lightgray1,40%) 
-  text-decoration none  
+  color darken(lighter-color1,40%)
+  border-bottom 1px solid darken(lighter-color1,40%)
+  text-decoration none
 
 h1,h2,h3,h4,h5
   font-weight normal
-  
+
 h6
-  color darken(lightgray1,30%)
-  margin-bottom .25em  
-  font-size .8em  
+  color darken(lighter-color1,30%)
+  margin-bottom .25em
+  font-size .8em
   font-weight normal
-  text-transform uppercase  
+  text-transform uppercase
 
 h1
-  border-bottom 1px solid color
+  border-bottom 1px solid base-color
   padding-bottom .825em
   margin-bottom 0
 
 .important-note
-  background-color darkgray3
+  background-color darker-color3
   color white
-  padding 8px 0px 
+  padding 8px 0px
   margin 1em 2em
-  font-size 0.9em  
+  font-size 0.9em
   border-radius 0px 0px 10px 0px
   p
     padding 0
-    margin 0 1em 
+    margin 0 1em
   a
-    color lightgray3
+    color lighter-color3
 
 .topbar-inner
   .logo-animation
@@ -51,51 +52,51 @@ h1
     h1
       display block
       position relative
-      top 0  
+      top 0
       border none
-      color color
+      color base-color
       font-size 1.95em
       cursor pointer
-      text-shadow 0 1px 1px lightgray3
-      margin-top .725em  
+      text-shadow 0 1px 1px lighter-color3
+      margin-top .725em
   .navigation
     grid-space(50%)
     .pills-holder
       width 450px
-      margin 0 auto  
-      #github 
+      margin 0 auto
+      #github
         img
           display inline
           position relative
-          float left  
+          float left
 
 .container
   grid()
   background-color white
-  border 1px solid lighten(darkgray3,60%)
-  box-shadow 0 0 46px lightgray2
+  border 1px solid lighten(darker-color3,60%)
+  box-shadow 0 0 46px lighter-color2
 
 header
   grid_100()
-  color color
-  background radial-gradient(ellipse farthest-corner at top left,lightgray3 0%,lightgray2 40%,lightgray1 70%, lightgray2 100%)
+  color base-color
+  background radial-gradient(ellipse farthest-corner at top left,lighter-color3 0%,lighter-color2 40%,lighter-color1 70%, lighter-color2 100%)
   large()
-  border-bottom 1px solid lighten(darkgray3,45%)
-  .header-inner 
+  border-bottom 1px solid lighten(darker-color3,45%)
+  .header-inner
     width 95.825%
     margin 18px
     padding 0px
-    border 1px solid color
+    border 1px solid base-color
     z-index 4
     h4
        margin .8em 1em .2em 4em
     h5
        margin .2em 1em 1.2em 4.8em
-       line-height 1.05em  
-    h1  
+       line-height 1.05em
+    h1
       font-size 2em
       margin 1em 0 .15em 1em
-      padding-bottom .925em  
+      padding-bottom .925em
       text-shadow 0 0 88px white, 0 0 108px white, 0 0 128px white
 
 #about
@@ -103,10 +104,10 @@ header
     grid-space(55%)
   .isnt
     grid-space(45%)
-  .isnt-inner  
+  .isnt-inner
     margin 0.5em 0
     column-count 2
-    column-gap 0.5em  
+    column-gap 0.5em
 
 #installation
   .node
@@ -144,13 +145,13 @@ header
   .sections-spaces-explanation
     grid-space(60%)
     center-space()
-    font-size 1.1em  
+    font-size 1.1em
     font-weight normal
-    padding 1.2em  
-    border-radius 3px  
-    color white  
-    background-color darkgray3
-    box-shadow inset 0px 0px 30px darken(darkgray1,80%)
+    padding 1.2em
+    border-radius 3px
+    color white
+    background-color darker-color3
+    box-shadow inset 0px 0px 30px darken(darker-color1,80%)
 
 #sections
   .sections-code
@@ -201,36 +202,36 @@ header
       font-weight bold
     .headings-examples
       h6
-        text-transform none  
-        font-size 1em  
-        color color
+        text-transform none
+        font-size 1em
+        color base-color
       h1
         border none
         padding 0
   .paragraphs
-    grid-space(44%)    
-  .lists-1    
-    grid-space(33%)    
-  .lists-2    
-    grid-space(33%)    
-  .lists-3    
-    grid-space(34%)    
+    grid-space(44%)
+  .lists-1
+    grid-space(33%)
+  .lists-2
+    grid-space(33%)
+  .lists-3
+    grid-space(34%)
   .blockquotes
-    grid-space(33%)    
+    grid-space(33%)
   .code-blocks
-    grid-space(33%)    
-  .address-blocks   
-    grid-space(33%)    
+    grid-space(33%)
+  .address-blocks
+    grid-space(33%)
 
 
 #css3
-  .css3-explanation  
+  .css3-explanation
     grid-space(50%)
   .css3-mixins
     grid-space(50%)
-    .mixin-list  
+    .mixin-list
       columns 2
-      border-radius 10px  
+      border-radius 10px
       ul
         list-style-type none
 
@@ -238,52 +239,52 @@ header
   margin-bottom 2em
   .linear-gradient-explanation
     grid-space(25%)
-    min-height 400px  
+    min-height 400px
   .linear-gradient-example-code
     grid-space(75%)
   .linear-gradient-sample
     grid-space(75%)
     #sample-1
-      background-image linear-gradient(65deg, white, darkgray3)
+      background-image linear-gradient(65deg, white, darker-color3)
     #sample-2
-      background-image linear-gradient(to bottom left, lightgray2 40%, darkgray3 70%, lightgray3 100%)
+      background-image linear-gradient(to bottom left, lighter-color2 40%, darker-color3 70%, lighter-color3 100%)
   .radial-gradient-explanation
     grid-space(25%)
-    min-height 400px  
+    min-height 400px
   .radial-gradient-example-code
     grid-space(75%)
   .radial-gradient-sample
     grid-space(75%)
     #sample-1
-      background radial-gradient(at top right, #fff, #353535)
+      background radial-gradient(at top right, white, darker-color1)
     #sample-2
       background radial-gradient(
-        ellipse farthest-corner at 0% 100%, #fff 10%, #353535 50%, #dadada 70% 
+        ellipse farthest-corner at 0% 100%, white 10%, darker-color1 50%, lighter-color2 70%
       )
     #sample-3
-      background radial-gradient(circle closest-side at 40px 30px, white, darkgray3)
+      background radial-gradient(circle closest-side at 40px 30px, white, darker-color3)
 .gradient-sample
   grid-space(20%)
-  height 100px  
-  border 1px solid lightgray1  
-  margin-top 20px  
+  height 100px
+  border 1px solid lighter-color1
+  margin-top 20px
   margin-left 2%
-  h6 
+  h6
     position relative
-    top -24px  
+    top -24px
     margin 0
     padding 0
 
 footer
-  background radial-gradient(ellipse farthest-corner at top left,lightgray2 0%,lightgray1 40%,lightgray3 70%, lightgray2 100%)
+  background radial-gradient(ellipse farthest-corner at top left,lighter-color2 0%,lighter-color1 40%,lighter-color3 70%, lighter-color2 100%)
   #copyright
     grid-space(100%)
     font-size .8em
-    border-top 1px solid darken(lightgray1, 10%)
-    p  
+    border-top 1px solid darken(lighter-color1, 10%)
+    p
       margin 0.7em 1em 1em 1em
       text-align center
-  
+
 
 // Animation Elements
 .shown
@@ -295,7 +296,7 @@ footer
   .logo-animation
     .stage
       position absolute
-      display block  
+      display block
       top 0
       left 0
       display block
@@ -303,7 +304,7 @@ footer
       height 100%
       opacity 0
       transition all .2s linear
-      overflow hidden  
+      overflow hidden
       .square-x
         position absolute
         left 89px
@@ -331,7 +332,7 @@ footer
         display block
         width 5px
         height 5px
-        background-color darken(lightgray1,20%)
+        background-color darken(lighter-color1,20%)
       .square2-x
         position absolute
         left 89px
@@ -369,18 +370,18 @@ header
    display block
    width 100%
    height 100%
-   overflow-hidden  
+   overflow-hidden
    z-index 2 x
    .square
      display block
      width 10px
      height 10px
-     background-color lightgray1
+     background-color lighter-color1
    .square2
      display block
      width 10px
      height 10px
-     background-color #fff 
+     background-color #fff
    .square-x
      position absolute
      left 148px
@@ -450,7 +451,7 @@ header
   20%
     transform translateY(18px)
   30%
-    transform translateY(-14px) 
+    transform translateY(-14px)
   40%
     transform translateY(14px)
   50%
