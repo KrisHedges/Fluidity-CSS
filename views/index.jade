@@ -46,7 +46,7 @@ block content
            | ### Install Stylus globally
            | ### to use the 'stylus' command
            | npm install stylus -g
-           |
+           | &nbsp;
            | ### In your working directory
            | npm install fluidity
          h4 Example Using Connect-Assets
@@ -67,15 +67,15 @@ block content
            | var connect = require('connect'),
            |     stylus = require('stylus'),
            |     fluidity = require('fluidity');
-           |
+           | &nbsp;
            | var server = connect();
-           |
+           | &nbsp;
            | function compile(str, path) {
            |   return stylus(str)
            |   .set('filename', path)
            |   .use(fluidity());
            | }
-           |
+           | &nbsp;
            | server.use(stylus.middleware({
            |   src: __dirname,
            |   compile: compile
@@ -92,7 +92,7 @@ block content
            | ### Install Stylus globally
            | ### to use the 'stylus' command
            | npm install stylus -g
-           |
+           | &nbsp;
            | ### In your working directory
            | npm install fluidity
          p
@@ -105,7 +105,7 @@ block content
          h6 Commandline
          code
            | stylus file.styl --use ../fluidity/lib/fluidity
-           |
+           | &nbsp;
            | // You may also want to -w (watch) switch
            | // to watch the file for changes and
            | // recompile the CSS when your developing.
@@ -124,11 +124,13 @@ block content
          h6 Stylus
          code
            | @import "fluidity"
+           | // For Non-Semantic Grid classes use.
+           | @import "fluidity-non-semantic"
          h6 Stylus
          code
            | // Just use Normalize and the Grid
            | @import "fluidity/normalize"
-           | @import "fluidity/grid"
+           | @import "fluidity/semantic-grid"
      section#global-variables
        h3 Global Variables
        .global-variables-explanation
@@ -267,13 +269,6 @@ block content
              | Inkspeck Design <br/>
              | 2012 E. Developer Ave. <br/>
              | Columbus, Ohio <br/>
-           h6 jade
-           code
-             | address
-             |   | Inkspeck Design &lt;br/&gt;
-             |   | 2012 E. Developer Ave.&lt;br/&gt;
-             |   | Columbus, Ohio &lt;br/&gt;
-
      section#grid
        h1 The Grid
        h3 Grid Configuration Variables
@@ -283,7 +278,7 @@ block content
            | // Fluid-layout down to mobile size
            | grid-width = 100%
            | grid-min-width = 320px
-           |
+           | &nbsp;
            | // Fixed-layout
            | grid-width = 960px
            | grid-min-width = 960px
@@ -299,9 +294,9 @@ block content
        .create-grid-code
          h6 HTML
          code
-           | &lt;!-- Semantic --&gt;
-           | &lt;div id="your-container"&gt;
-           | &lt;/div&gt;
+            &lt;!-- Semantic --&gt;
+            &lt;div id="your-container"&gt;
+            &lt;/div&gt;
          h6 Stylus
          code
            | #your-container
@@ -312,9 +307,13 @@ block content
            |   grid(50%,400px)
          h6 HTML
          code
-           | &lt;!-- Non-Semantic --&gt;
-           | &lt;div class="grid"&gt;
-           | &lt;/div&gt;
+           &lt;!-- Non-Semantic --&gt;
+           &lt;div class="grid"&gt;
+           &lt;/div&gt;
+         h6 Stylus
+         code
+           | @import "fluidity-non-semantic"
+
        .create-grid-explanation
          h6 The Semantic Grid
          p
@@ -328,7 +327,7 @@ block content
            | The grid mixin takes two arguments the first for the grid-width and the second for grid-min-width.
          h6 The Non-Semantic Grid
          p
-           | The grid can also be instantiated in a non-semantic way by using the ".grid" class in your HTML.
+           | The grid can also be instantiated in a non-semantic way by using the @import "fluidity-non-semantic" in your .styl files and the ".grid" class in your HTML.
            | This will instantiate a grid with the defaults set by the grid-width and grid-min-width variables.
          .important-note
            p
@@ -358,25 +357,26 @@ block content
            | &lt;!-- Semantic --&gt;
            | &lt;header&gt;
            | &lt;/header&gt;
-           |
+           | &nbsp;
            | &lt;section&gt;
            | &lt;/section&gt;
-           |
+           | &nbsp;
            | &lt;footer&gt;
            | &lt;/footer&gt;
-           |
+           | &nbsp;
            | &lt;fieldset&gt;
            | &lt;/fieldset&gt;
-
          h6 HTML
          code
+           | IMPORTANT! The following will only work if you are using @import "fluidity-non-semantic"
+           | &nbsp;
            | &lt;!-- Non-Semantic --&gt;
            | &lt;div class="header"&gt;
            | &lt;/div&gt;
-           |
+           | &nbsp;
            | &lt;div class="section"&gt;
            | &lt;/div&gt;
-           |
+           | &nbsp;
            | &lt;div class="footer"&gt;
            | &lt;/div&gt;
        .sections-explanation
@@ -454,6 +454,8 @@ block content
          h6 Non-Semantic Spaces
          .spaces-code-non-semantic-explanation
            p
+             | IMPORTANT! Non-Seamntic classes are only included if you are using @import "fluidity-non-semantic"
+           p
              | For non-semantic spaces you can use the <em>grid-space-(n)</em> classes, where (n) is the number representing the width percentage. These classes exist for the numbers 1-100.
          .spaces-code-non-semantic-html
            h6 HTML
@@ -475,7 +477,7 @@ block content
          .spaces-code-non-semantic-stylus
            h6 Stylus
            code
-             | @import "fluidity"
+             | @import "fluidity-non-semantic"
      section#grid-examples
        h3 Some Grid Examples
        section
@@ -510,20 +512,20 @@ block content
            h6 Stylus
            code
               |  @import "fluidity"
-              |
+              |  &nbsp;
               |  #examplepage
               |    grid(80%,960px)
-              |
+              |  &nbsp;
               |  header
               |    background-color darkgray2
               |    color white
-              |
+              |  &nbsp;
               |  #content
               |    sidebar
               |      grid-space(30%)
               |    article
               |      grid-space(70%)
-              |
+              |  &nbsp;
               |  footer
               |    background-color lightgray2
               |    text-align center
@@ -561,44 +563,44 @@ block content
          .three-column-example-code-stylus
            h6 Stylus
            code
-             | @import "fluidity"
-             |
-             | #examplepage
-             |   grid(90%,800px)
-             | header
-             |   background-color darkgray2
-             |   color white
-             | #left-menu
-             |   grid-space(25%)
-             | #content
-             |   grid-space(50%)
-             | #right-menu
-             |   grid-space(25%)
-             | footer
-             |   background-color lightgray2
-             |   text-align center
-             |
-             | @media screen and (max-width: 800px)
-             |   #examplepage
-             |     grid(90%,475px)
-             |   #left-menu
-             |     grid-space(45%)
-             |   #content
-             |     grid-space(55%)
-             |   #right-menu
-             |     grid-space(100%)
-             |
-             | @media screen and (max-width: 500px)
-             |   #examplepage
-             |     grid(90%,320px)
-             |   header
-             |     font-size 0.8em
-             |   #left-menu
-             |     grid-space(100%)
-             |   #content
-             |     grid-space(100%)
-             |   #right-menu
-             |     grid-space(100%)
+             |  @import "fluidity"
+             |  &nbsp;
+             |  #examplepage
+             |    grid(90%,800px)
+             |  header
+             |    background-color darkgray2
+             |    color white
+             |  #left-menu
+             |    grid-space(25%)
+             |  #content
+             |    grid-space(50%)
+             |  #right-menu
+             |    grid-space(25%)
+             |  footer
+             |    background-color lightgray2
+             |    text-align center
+             |  &nbsp;
+             |  @media screen and (max-width: 800px)
+             |    #examplepage
+             |      grid(90%,475px)
+             |    #left-menu
+             |      grid-space(45%)
+             |    #content
+             |      grid-space(55%)
+             |    #right-menu
+             |      grid-space(100%)
+             |  &nbsp;
+             |  @media screen and (max-width: 500px)
+             |    #examplepage
+             |      grid(90%,320px)
+             |    header
+             |      font-size 0.8em
+             |    #left-menu
+             |      grid-space(100%)
+             |    #content
+             |      grid-space(100%)
+             |    #right-menu
+             |      grid-space(100%)
        section
          .three-column-fixed-example-code-explanation
            h4 A Three Column Fixed-Width Layout
@@ -631,25 +633,25 @@ block content
          .three-column-fixed-example-code-stylus
            h6 Stylus
            code
-             | @import "fluidity"
-             |
-             | #examplepage
-             |   grid(960px,960px)
-             |
-             | header
-             |   background-color darkgray2
-             |   color white
-             |
-             | #left-menu
-             |   grid-space(25%)
-             | #content
-             |   grid-space(50%)
-             | #right-menu
-             |   grid-space(25%)
-             |
-             | footer
-             |   background-color lightgray2
-             |   text-align center
+             |  @import "fluidity"
+             |  &nbsp;
+             |  #examplepage
+             |    grid(960px,960px)
+             |  &nbsp;
+             |  header
+             |    background-color darkgray2
+             |    color white
+             |  &nbsp;
+             |  #left-menu
+             |    grid-space(25%)
+             |  #content
+             |    grid-space(50%)
+             |  #right-menu
+             |    grid-space(25%)
+             |  &nbsp;
+             |  footer
+             |    background-color lightgray2
+             |    text-align center
      section#css3
        h1 CSS3
        .css3-explanation
