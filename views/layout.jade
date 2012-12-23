@@ -8,9 +8,6 @@ html
     link(rel="icon", type="image/png", href="/images/favicon.png")
     // CSS
     != css('index')
-    // JS
-    != js('http://code.jquery.com/jquery.min.js')
-    != js('fluidity')
   body
     .topbar
       .topbar-inner
@@ -36,6 +33,9 @@ html
     block content
 
 
+  // JS
+  != js('http://code.jquery.com/jquery.min.js')
+  != js('fluidity')
   script(type="text/javascript")
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-4860055-10']);
