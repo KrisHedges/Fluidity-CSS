@@ -32,19 +32,13 @@ $(document).ready( function(){
         topsquares.append(squares);
         headersquares.append(squares);
       };
-      stopIt = function(){
-        setTimeout("clearInterval(fireInterval)", 3100);
-      };
-      fireAway = function(){
-        fireInterval = setInterval("firesquares()", 100);
-      };
-      fireAway();
-      stopIt();
+      fireInterval = setInterval("firesquares()", 100);
+      setTimeout("clearInterval(fireInterval)", 3100);
     };
     createHelixes();
 
-    moveHelixOnScroll =  function(){
-      $(window).scroll(function (){
+    moveHelixOnScroll =  function() {
+      $(window).scroll( function (){
        var y = $(window).scrollTop();
        if(y < 110){
            topsquares.removeClass('shown');
@@ -58,7 +52,7 @@ $(document).ready( function(){
   };
 
   init = function() {
-    setTimeout("helix()",1500);
+    setTimeout("helix()",500);
     topbarMenu();
   };
   init();
