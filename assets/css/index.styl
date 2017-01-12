@@ -3,7 +3,8 @@ grid-min-width = 960px
 base-font-size = 16px
 base-line-height = 1.35em
 base-color = #353536
-vendors = webkit moz o ms official
+vendors = webkit moz ms official
+
 @import "fluidity"
 @import "fluidity/elements"
 @import "fluidity/forms"
@@ -303,6 +304,7 @@ footer
       width 99%
       height 100%
       opacity 0
+      transform translate3d(0,0,0)
       transition all .2s linear
       overflow hidden
       .square-x
@@ -313,6 +315,7 @@ footer
         width 40px
         height 200px
         z-index 2
+        transform translate3d(0,0,0)
         animation-name topbar-square-x
         animation-duration 3s
         animation-timing-function linear
@@ -323,6 +326,7 @@ footer
         width 40px
         height 40px
         z-index 2
+        transform translate3d(0,0,0)
         animation-name topbar-square-y
         animation-duration 3s
         animation-timing-function ease-in-out
@@ -332,6 +336,7 @@ footer
         display block
         width 5px
         height 5px
+        transform translate3d(0,0,0)
         background-color darken(lighter-color1,20%)
       .square2-x
         position absolute
@@ -341,6 +346,7 @@ footer
         width 40px
         height 200px
         z-index 2
+        transform translate3d(0,0,0)
         animation-name topbar-square-x
         animation-duration 3s
         animation-timing-function linear
@@ -351,6 +357,7 @@ footer
         width 40px
         height 40px
         z-index 2
+        transform translate3d(0,0,0)
         animation-name topbar-square2-y
         animation-duration 3s
         animation-timing-function ease-in-out
@@ -361,6 +368,7 @@ footer
         width 5px
         height 5px
         background-color white
+        transform translate3d(0,0,0)
 
 //Header Large Helixes
 
@@ -391,6 +399,7 @@ header
      height 200px
      z-index 2
      opacity 0
+     transform translate3d(0,0,0)
      animation-name square-x
      animation-duration 3s
      animation-timing-function linear
@@ -401,6 +410,7 @@ header
      width 40px
      height 40px
      z-index 2
+     transform translate3d(0,0,0)
      animation-name square-y
      animation-duration 3s
      animation-timing-function ease-in-out
@@ -415,6 +425,7 @@ header
      height 200px
      z-index 2
      opacity 0
+     transform translate3d(0,0,0)
      animation-name square-x
      animation-duration 3s
      animation-timing-function linear
@@ -425,6 +436,7 @@ header
      width 40px
      height 40px
      z-index 2
+     transform translate3d(0,0,0)
      animation-name square2-y
      animation-duration 3s
      animation-timing-function ease-in-out
