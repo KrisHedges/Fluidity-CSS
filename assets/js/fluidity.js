@@ -3,21 +3,21 @@ $(document).ready( function(){
 
   topbarMenu = function() {
     offsetTargetScrollForTopbar = function(){
-      $('a[href*=#]').click(function() {
+      $('a[href*=#]').click( function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-           var $target = $(this.hash);
-           $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-           if ($target.length) {
-             var targetOffset = $target.offset().top - 62;
-             $('html,body').animate({scrollTop: targetOffset}, 150);
-             return false;
-           };
-        };  
+        var $target = $(this.hash);
+        $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+        if ($target.length) {
+            var targetOffset = $target.offset().top - 62;
+            $('html,body').animate({scrollTop: targetOffset}, 150);
+            return false;
+        };
+        }
       });
     };
 
     $(".topbar h1").click( function(){
-       $('html, body').animate({ scrollTop: 0 }, 150);                             
+       $('html, body').animate({ scrollTop: 0 }, 150);
     });
     offsetTargetScrollForTopbar();
   };
@@ -42,7 +42,7 @@ $(document).ready( function(){
       stopIt();
     };
     createHelixes();
-    
+
     moveHelixOnScroll =  function(){
       $(window).scroll(function (){
        var y = $(window).scrollTop();
@@ -56,10 +56,10 @@ $(document).ready( function(){
     };
     moveHelixOnScroll();
   };
-  
+
   init = function() {
     setTimeout("helix()",1500);
-    topbarMenu()
+    topbarMenu();
   };
-  init();                     
+  init();
 });
